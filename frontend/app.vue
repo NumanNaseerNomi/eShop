@@ -11,7 +11,6 @@
     mounted()
     {
       import('bootstrap/dist/js/bootstrap.bundle.min.js');
-      console.log(`the component is now mounted.`)
     }
   }
 </script>
