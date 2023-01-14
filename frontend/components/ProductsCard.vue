@@ -61,7 +61,7 @@
       {
         this.isLoading = true;
 
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=2')
+        fetch('https://jsonplaceholder.typicode.com/photos?_limit=12')
         .then(response => response.json())
         .then(json =>
           {
