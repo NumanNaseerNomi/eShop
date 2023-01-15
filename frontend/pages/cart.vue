@@ -26,12 +26,12 @@
       </template>
     </template>
     <template v-else>
-      <template v-for="product in products">
+      <template v-for="item in items">
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-2">
               <NuxtLink to="/product/detail">
-                <img :src="product.url" class="img-fluid rounded-start" alt="...">
+                <img :src="item.url" class="img-fluid rounded-start" alt="...">
               </NuxtLink>
             </div>
             <div class="col-md-10">
@@ -54,7 +54,7 @@
     {
       let data =
       {
-        products: null,
+        items: null,
         isLoading: false,
       }
 
@@ -76,7 +76,7 @@
         .then(response => response.json())
         .then(json =>
           {
-            this.products = json;
+            this.items = json;
             this.isLoading = false;
           }
         );
