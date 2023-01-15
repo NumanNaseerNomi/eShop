@@ -24,14 +24,14 @@
       </template>
       <template v-else>
         <div class="col" v-for="product in products">
-          <div class="card h-100">
+          <NuxtLink class="card h-100 text-decoration-none text-body" to="/product/detail">
             <img :src="product.url" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ product.title }}</h5>
               <p class="card-text">{{ product.title }}</p>
-              <p class="card-text text-success"><strong>PKR 500</strong></p>
+              <h5 class="card-text text-success"><strong>PKR 500</strong></h5>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </template>
     </div>
