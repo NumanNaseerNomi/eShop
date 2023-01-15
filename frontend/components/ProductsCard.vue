@@ -31,7 +31,7 @@
               <del class="text-danger mx-2 text-nowrap">PKR 500</del>
               <span class="text-success mx-2 text-nowrap">20% OFF</span>
               <div class="d-grid gap-2 m-2">
-                <button class="btn btn-success" type="button">Add to Cart</button>
+                <button class="btn btn-success" type="button" @click="addToCart()">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -73,6 +73,11 @@
             this.isLoading = false;
           }
         );
+      },
+
+      addToCart()
+      {
+        alert('addToCart()');
       }
     }
   }
