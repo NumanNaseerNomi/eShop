@@ -24,7 +24,7 @@
       </template>
       <template v-else>
         <div class="col" v-for="product in products">
-          <div class="card">
+          <div class="card h-100">
             <img :src="product.url" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ product.title }}</h5>
