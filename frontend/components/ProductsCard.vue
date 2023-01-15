@@ -29,8 +29,12 @@
             <div class="card-body">
               <h5 class="card-title">{{ product.title }}</h5>
               <p class="card-text">{{ product.title }}</p>
-              <h5 class="card-text text-success"><strong>PKR 500</strong></h5>
             </div>
+            <strong class="card-footer">
+              <span class="text-success mx-2 text-nowrap">PKR 500</span>
+              <del class="text-danger mx-2 text-nowrap">PKR 500</del>
+              <span class="text-success mx-2 text-nowrap">20% OFF</span>
+            </strong>
           </NuxtLink>
         </div>
       </template>
