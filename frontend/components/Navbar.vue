@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar bg-success">
+    <nav class="navbar fixed-top bg-success">
         <div class="container">
             <div>
                 <nav class="nav text-light">
