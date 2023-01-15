@@ -29,6 +29,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ product.title }}</h5>
               <p class="card-text">{{ product.title }}</p>
+              <p class="card-text text-success"><strong>PKR 500</strong></p>
             </div>
           </div>
         </div>
