@@ -4,8 +4,8 @@
       <template v-if="isLoading">
         <div class="col" v-for="n in 4">
           <div class="card" aria-hidden="true">
-            <svg width="100%" height="300">
-              <rect width="100%" height="100%" fill="#adb5bd"></rect>
+            <svg class="w-100" height="300">
+              <rect class="w-100 h-100" fill="#adb5bd"></rect>
             </svg>
             <div class="card-body placeholder-glow">
               <h6 class="placeholder col-10"></h6>
