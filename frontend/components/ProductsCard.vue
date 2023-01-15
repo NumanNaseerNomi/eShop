@@ -24,18 +24,20 @@
       </template>
       <template v-else>
         <div class="col" v-for="product in products">
-          <NuxtLink class="card h-100 text-decoration-none text-body" to="/product/detail">
-            <img :src="product.url" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.title }}</h5>
-              <p class="card-text">{{ product.title }}</p>
-            </div>
-            <strong class="card-footer">
+          <div class="card h-100 text-decoration-none text-body" to="/product/detail">
+            <NuxtLink to="/product/detail">
+              <img :src="product.url" class="card-img-top" alt="...">
+            </NuxtLink>
+            <div class="card-body h6 m-0">
+              <p class="card-text text-truncate">{{ product.title }}</p>
               <span class="text-success mx-2 text-nowrap">PKR 500</span>
               <del class="text-danger mx-2 text-nowrap">PKR 500</del>
               <span class="text-success mx-2 text-nowrap">20% OFF</span>
-            </strong>
-          </NuxtLink>
+              <div class="d-grid gap-2 m-2">
+                <button class="btn btn-success" type="button">Add to Cart</button>
+              </div>
+            </div>
+          </div>
         </div>
       </template>
     </div>
