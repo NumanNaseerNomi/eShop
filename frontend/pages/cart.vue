@@ -1,6 +1,6 @@
 <template>
   <div class="container my-4">
-    <h1>Your Cart Items</h1>
+    <h1>My Cart Items</h1>
     <template v-if="isLoading">
       <template v-for="n in 2">
         <div class="card mb-3">
