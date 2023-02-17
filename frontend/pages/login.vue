@@ -20,7 +20,7 @@
                 <a href="/resetPassword" class="text-decoration-none">Forgot Password? Reset</a>
                 <hr/>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <a class="btn btn-outline-success" href="/register" role="button">Register</a>
+                    <NuxtLink class="btn btn-outline-success" to="/register">Register</NuxtLink>
                 </div>
             </form>
         </div>
