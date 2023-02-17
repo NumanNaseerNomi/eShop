@@ -3,14 +3,14 @@
     <div class="row justify-content-center">
         <div class="col-11 col-md-4 border shadow px-3 py-4">
             <h2 class=" d-flex justify-content-center">Login</h2>
-            <form action="/login" method="post" class="row g-3">
+            <form class="row g-3" @submit.prevent="login()">
                 <div class="col-md-12">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" required>
+                    <input type="email" v-model="email" name="email" class="form-control" required>
                 </div>
                 <div class="col-md-12">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" required>
+                    <input type="password" v-model="password" name="password" class="form-control" required>
                 </div> 
                 <div class="col-12">
                     <div class="d-grid gap-2">
@@ -27,4 +27,26 @@
     </div>
   </div>
 </template>
+<script>
+  export default
+  {
+    data()
+    {
+      let data =
+      {
+        email: '',
+        password: '',
+      }
 
+      return data;
+    },
+    
+    methods:
+    {
+      login()
+      {
+        alert('login() '+ this.email);
+      }
+    }
+  }
+</script>
