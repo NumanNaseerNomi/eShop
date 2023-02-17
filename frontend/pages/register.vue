@@ -4,6 +4,7 @@
         <div class="col-11 col-md-5 border shadow px-3 py-4 mb-3">
             <h3 class ="d-flex justify-content-center mb-3">Create New Account</h3>
             <form action="/register" method="post" class="row g-3">
+            <form class="row g-3" @submit.prevent="register()"></form>
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control" id="name" required>
@@ -62,7 +63,7 @@
     
     methods:
     {
-      login()
+      register()
       {
         alert(this.password + ' login() '+ this.email);
       }
