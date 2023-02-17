@@ -23,7 +23,7 @@
                         <NuxtLink class="nav-link text-light" to="/cart">My Cart</NuxtLink>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                        <button class="btn text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
                         <ul class="dropdown-menu">
                             <li><NuxtLink class="dropdown-item" to="/profile">Profile</NuxtLink></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
