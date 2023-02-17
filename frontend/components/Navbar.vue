@@ -30,7 +30,11 @@
                             <li><NuxtLink class="dropdown-item" to="/profile">Profile</NuxtLink></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li>
+                                <NuxtLink class="dropdown-item" to="/login">Login</NuxtLink>
+                                <NuxtLink class="dropdown-item" to="#">Logout</NuxtLink>
+                            </li>
+                            <!-- <li><a class="dropdown-item" href="#">Logout</a></li> -->
                         </ul>
                     </li>
                 </ul>
