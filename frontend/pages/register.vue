@@ -43,4 +43,26 @@
     </div>
   </div>
 </template>
+<script>
+  export default
+  {
+    data()
+    {
+      let data =
+      {
+        email: '',
+        password: '',
+      }
 
+      return data;
+    },
+    
+    methods:
+    {
+      login()
+      {
+        alert(this.password + ' login() '+ this.email);
+      }
+    }
+  }
+</script>
