@@ -29,10 +29,9 @@
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
-                                <NuxtLink class="dropdown-item" to="/login">Login</NuxtLink>
-                                <NuxtLink class="dropdown-item" to="#">Logout</NuxtLink>
+                                <NuxtLink v-if="true" class="dropdown-item" to="/login">Login</NuxtLink>
+                                <NuxtLink v-else class="dropdown-item" to="#">Logout</NuxtLink>
                             </li>
-                            <!-- <li><a class="dropdown-item" href="#">Logout</a></li> -->
                         </ul>
                     </li>
                 </ul>
