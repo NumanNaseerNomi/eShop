@@ -17,7 +17,7 @@
                         <button type="submit" class="btn btn-success">Login</button>
                     </div>
                 </div>
-                <a href="/resetPassword" class="text-decoration-none">Forgot Password? Reset</a>
+                <NuxtLink class="text-decoration-none" to="/resetPassword">Forgot Password? Reset</NuxtLink>
                 <hr/>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <NuxtLink class="btn btn-outline-success" to="/register">Register</NuxtLink>
@@ -45,7 +45,7 @@
     {
       login()
       {
-        alert('login() '+ this.email);
+        alert(this.password + ' login() '+ this.email);
       }
     }
   }
