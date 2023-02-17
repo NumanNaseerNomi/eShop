@@ -34,7 +34,6 @@
                     </div>
                 </div>
                 <hr/>
-                <!-- <span>Already Registered?</span> -->
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <NuxtLink class="btn btn-outline-success" to="/login">Login</NuxtLink>
                 </div>
@@ -50,8 +49,12 @@
     {
       let data =
       {
+        name: '',
         email: '',
+        contactNumber: '',
+        address: '',
         password: '',
+        password_confirmation: '',
       }
 
       return data;
