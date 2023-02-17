@@ -34,9 +34,9 @@
                     </div>
                 </div>
                 <hr/>
-                <span>Already Registered?</span>
+                <!-- <span>Already Registered?</span> -->
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <a class="btn btn-outline-success" href="/login" role="button">Login</a>
+                    <NuxtLink class="btn btn-outline-success" to="/login">Login</NuxtLink>
                 </div>
             </form>
         </div>
