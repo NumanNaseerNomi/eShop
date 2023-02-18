@@ -18,9 +18,6 @@
             </div>
           </div>
         </div>
-        <div class="container text-center">
-          <button class="btn btn-outline-success" type="button" @click="loadMore()">Load More</button>
-        </div>
       </template>
       <template v-if="isLoading">
         <div class="col" v-for="n in 4">
@@ -40,6 +37,9 @@
           </div>
         </div>
       </template>
+    </div>
+    <div class="container text-center" v-show="!isLoading">
+        <button class="btn btn-outline-success m-4" type="button" @click="loadMore()">Load More</button>
     </div>
   </div>
 </template>
@@ -68,7 +68,7 @@
       {
         this.isLoading = true;
 
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=12')
+        fetch('https://jsonplaceholder.typicode.com/photos?_limit=4')
         .then(response => response.json())
         .then(json =>
           {
