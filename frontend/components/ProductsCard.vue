@@ -52,7 +52,7 @@
       {
         products: [],
         isLoading: false,
-        canLoadMore: false,
+        canLoadMore: true,
       }
 
       return data;
@@ -71,19 +71,15 @@
 
         fetch('https://jsonplaceholder.typicode.com/photos?_limit=4')
         .then(response => response.json())
-        .then(json =>
+        .then(data =>
           {
-            if(json.length)
-            {
-              this.products.push(...json);
-              this.canLoadMore = true;
-            }
-            else
+            this.products.push(...data);
+            this.isLoading = false;
+
+            if(data.length == 0)
             {
               this.canLoadMore = false;
             }
-
-            this.isLoading = false;
           }
         );
       },
