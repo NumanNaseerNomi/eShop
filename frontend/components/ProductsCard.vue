@@ -1,6 +1,6 @@
 <template>
   <div class="container my-4">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="infinite-list">
       <template v-if="isLoading">
         <div class="col" v-for="n in 4">
           <div class="card" aria-hidden="true">
@@ -36,6 +36,11 @@
             </div>
           </div>
         </div>
+        <div class="container text-center">
+          <button class="btn btn-outline-success" type="button" @click="loadMore()">Load More</button>
+        </div>
+
+
       </template>
     </div>
   </div>
@@ -47,7 +52,7 @@
     {
       let data =
       {
-        products: null,
+        products: [],
         isLoading: false,
       }
 
@@ -69,10 +74,15 @@
         .then(response => response.json())
         .then(json =>
           {
-            this.products = json;
+            this.products.push(...json);
             this.isLoading = false;
           }
         );
+      },
+
+      loadMore()
+      {
+        this.getProducts();
       },
 
       addToCart()
