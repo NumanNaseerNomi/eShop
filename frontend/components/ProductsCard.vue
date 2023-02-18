@@ -19,7 +19,7 @@
           </div>
         </div>
       </template>
-      <template v-else>
+      <template v-if="products.length">
         <div class="col" v-for="product in products">
           <div class="card h-100 text-decoration-none text-body" to="/product/detail">
             <NuxtLink to="/product/detail">
