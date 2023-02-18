@@ -1,24 +1,6 @@
 <template>
   <div class="container my-4">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="infinite-list">
-      <template v-if="isLoading">
-        <div class="col" v-for="n in 4">
-          <div class="card" aria-hidden="true">
-            <svg class="w-100" height="300">
-              <rect class="w-100 h-100" fill="#adb5bd"></rect>
-            </svg>
-            <div class="card-body placeholder-glow">
-              <h6 class="placeholder col-10"></h6>
-              <p>
-                <span class="placeholder mx-2 col-3"></span>
-                <span class="placeholder mx-2 col-3"></span>
-                <span class="placeholder mx-2 col-3"></span>
-              </p>
-              <a href="#" tabindex="-1" class="btn btn-secondary disabled placeholder col-12"></a>
-            </div>
-          </div>
-        </div>
-      </template>
       <template v-if="products.length">
         <div class="col" v-for="product in products">
           <div class="card h-100 text-decoration-none text-body" to="/product/detail">
@@ -39,8 +21,24 @@
         <div class="container text-center">
           <button class="btn btn-outline-success" type="button" @click="loadMore()">Load More</button>
         </div>
-
-
+      </template>
+      <template v-if="isLoading">
+        <div class="col" v-for="n in 4">
+          <div class="card" aria-hidden="true">
+            <svg class="w-100" height="300">
+              <rect class="w-100 h-100" fill="#adb5bd"></rect>
+            </svg>
+            <div class="card-body placeholder-glow">
+              <h6 class="placeholder col-10"></h6>
+              <p>
+                <span class="placeholder mx-2 col-3"></span>
+                <span class="placeholder mx-2 col-3"></span>
+                <span class="placeholder mx-2 col-3"></span>
+              </p>
+              <a href="#" tabindex="-1" class="btn btn-secondary disabled placeholder col-12"></a>
+            </div>
+          </div>
+        </div>
       </template>
     </div>
   </div>
