@@ -39,7 +39,7 @@
       </template>
     </div>
     <div class="container text-center" v-show="!isLoading">
-        <button class="btn btn-outline-success m-4" type="button" @click="loadMore()">Load More</button>
+        <button class="btn btn-outline-success m-4" type="button" @click="getProducts()">Load More</button>
     </div>
   </div>
 </template>
@@ -76,11 +76,6 @@
             this.isLoading = false;
           }
         );
-      },
-
-      loadMore()
-      {
-        this.getProducts();
       },
 
       addToCart()
