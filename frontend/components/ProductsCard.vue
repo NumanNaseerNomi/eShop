@@ -38,7 +38,7 @@
         </div>
       </template>
     </div>
-    <div class="container text-center" v-show="!isLoading">
+    <div class="container text-center" v-show="!isLoading && canLoadMore">
         <button class="btn btn-outline-success m-4" type="button" @click="getProducts()">Load More</button>
     </div>
   </div>
@@ -52,6 +52,7 @@
       {
         products: [],
         isLoading: false,
+        canLoadMore: false,
       }
 
       return data;
@@ -72,7 +73,16 @@
         .then(response => response.json())
         .then(json =>
           {
-            this.products.push(...json);
+            if(json.length)
+            {
+              this.products.push(...json);
+              this.canLoadMore = true;
+            }
+            else
+            {
+              this.canLoadMore = false;
+            }
+
             this.isLoading = false;
           }
         );
