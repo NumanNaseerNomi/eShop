@@ -28,7 +28,7 @@
                     <label for="password_confirmation" class="form-label">Confirm Password</label>
                     <input type="password" name="password_confirmation" class="form-control" v-model="password_confirmation" required>
                 </div>
-                <div class="col-12  mb-3">
+                <div class="col-12 mb-3">
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-success" :disabled="isLoading">
                           <span v-if="isLoading">
