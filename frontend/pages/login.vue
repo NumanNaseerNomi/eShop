@@ -3,8 +3,8 @@
     <div class="row justify-content-center">
         <div class="col-11 col-md-4 border shadow px-3 py-4">
             <h2 class=" d-flex justify-content-center">Login</h2>
-            <div class="alert alert-success" role="alert">
-              A verification email has been sent at <strong>{{ email }}</strong>
+            <div class="alert alert-success" role="alert" v-if="verifyEmail.length">
+              A verification email has been sent at <strong>{{ verifyEmail }}</strong>
             </div>
             <form class="row g-3" @submit.prevent="login()">
                 <div class="col-md-12">
@@ -39,6 +39,8 @@
       {
         email: '',
         password: '',
+
+        verifyEmail: 'numan.naseer.nomi@gmail.com',
       }
 
       return data;
