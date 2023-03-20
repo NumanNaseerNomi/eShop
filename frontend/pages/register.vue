@@ -30,7 +30,13 @@
                 </div>
                 <div class="col-12  mb-3">
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-success">Register</button>
+                        <button type="submit" class="btn btn-success" :disabled="isLoading">
+                          <span v-if="isLoading">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                          </span>
+                          <span v-else>Register</span>
+                        </button>
                     </div>
                 </div>
                 <hr/>
@@ -55,6 +61,8 @@
         address: '',
         password: '',
         password_confirmation: '',
+
+        isLoading: false,
       }
 
       return data;
@@ -64,7 +72,7 @@
     {
       register()
       {
-        alert(this.name + ' register() '+ this.email + ' register() '+ this.contactNumber + ' register() '+ this.address + ' register() '+ this.password + ' register() '+ this.password_confirmation);
+        this.isLoading = true;
       }
     }
   }
