@@ -17,7 +17,13 @@
                 </div> 
                 <div class="col-12">
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success" :disabled="isLoading">
+                          <span v-if="isLoading">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                          </span>
+                          <span v-else>Login</span>
+                        </button>
                     </div>
                 </div>
                 <NuxtLink class="text-decoration-none" to="/resetPassword">Forgot Password? Reset</NuxtLink>
@@ -41,6 +47,7 @@
         password: '',
 
         verifyEmail: 'numan.naseer.nomi@gmail.com',
+        isLoading: false,
       }
 
       return data;
@@ -50,7 +57,7 @@
     {
       login()
       {
-        alert(this.password + ' login() '+ this.email);
+        this.isLoading = true;
       }
     }
   }
