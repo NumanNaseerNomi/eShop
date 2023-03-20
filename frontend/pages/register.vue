@@ -12,11 +12,11 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" v-model="email" required>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <label for="contactNumber" class="form-label">Contact Number</label>
                     <input type="number" name="contactNumber" class="form-control" v-model="contactNumber" required>
-                </div>
-                <div class="col-md-6">
+                </div> -->
+                <div class="col-md-12">
                     <label for="address" class="form-label">Address</label>
                     <input type="text" name="address" class="form-control" v-model="address" required>
                 </div>
