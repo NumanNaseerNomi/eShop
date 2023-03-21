@@ -24,9 +24,7 @@ class AuthController extends Controller
             return response($data, Response::HTTP_OK);
         }
 
-        return response([
-            'message' => 'This User does not exist'
-        ], Response::HTTP_UNAUTHORIZED);
+        return response(['message' => 'This User does not exist'], Response::HTTP_UNAUTHORIZED);
     }
 
     public function register(Request $request)
