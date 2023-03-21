@@ -13,5 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return redirect(env('WEB_APP_URL') ?? 'welcome'); });
-Route::view('welcome', 'welcome');
+Route::view('/', 'welcome');
