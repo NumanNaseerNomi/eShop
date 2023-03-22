@@ -15,9 +15,13 @@ use App\Http\Controllers\Api\AuthController;
 |
 */
 
-Route::post('login', [AuthController::class, 'login']);
-Route::post('register', [AuthController::class, 'register']);
+Route::middleware(['api'])->group(function () {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('register', [AuthController::class, 'register']);
+    Route::get('email/verify/{id}', [AuthController::class, 'verify'])->name('verification.verify');
+});
 
 Route::middleware('auth:api')->group(function () {
+    Route::get('email/resend', [AuthController::class, 'resend'])->name('verification.resend');
     Route::post('logout', [AuthController::class, 'logout']);
 });
