@@ -39,11 +39,13 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ]);
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        $user->sendEmailVerificationNotification();
 
         return response($user, Response::HTTP_CREATED);
     }
@@ -57,5 +59,35 @@ class AuthController extends Controller
         }
 
         return response(['message' => 'Logout'], Response::HTTP_OK);
+    }
+
+    public function verify($id, Request $request)
+    {
+        if(!$request->hasValidSignature())
+        {
+            return response(254, 401);
+        }
+
+        $user = User::findOrFail($id);
+
+        if(!$user->hasVerifiedEmail())
+        {
+            $user->markEmailAsVerified();
+        }
+
+        return response(['message' => 'The email verified successfully.'], Response::HTTP_OK);
+    }
+
+    public function resend()
+    {
+        if(Auth::user()->hasVerifiedEmail())
+        {
+            return response(['message' => 'The email is already verified.'], Response::HTTP_FORBIDDEN);
+        }
+        else
+        {
+            Auth::user()->sendEmailVerificationNotification();
+            return response(['message' => 'Email verification link sent on your email.'], Response::HTTP_OK);
+        }
     }
 }
