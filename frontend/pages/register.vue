@@ -77,7 +77,15 @@
         {
           method: "POST",
           headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({ email: this.email, password: this.password })
+          body: JSON.stringify(
+            {
+              name: this.name,
+              email: this.email,
+              address: this.address,
+              password: this.password,
+              password_confirmation: this.password_confirmation,
+            }
+          )
         };
         
         this.isLoading = true;
