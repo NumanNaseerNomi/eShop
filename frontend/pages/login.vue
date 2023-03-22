@@ -47,7 +47,7 @@
         email: '',
         password: '',
 
-        verifyEmail: 'numan.naseer.nomi@gmail.com',
+        verifyEmail: '',
         message: '',
         isLoading: false,
       }
