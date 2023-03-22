@@ -74,7 +74,6 @@
         .then((response) => response.json())
         .then((data) =>
           {
-            console.log("DATA:", data);
             data.message ? this.message = data.message : null;
             this.isLoading = false;
           }
