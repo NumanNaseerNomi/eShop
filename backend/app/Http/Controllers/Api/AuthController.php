@@ -39,15 +39,32 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
+        $validationRules =
+        [
+            'name' => ['required'],
+            'email' => ['required', 'email', 'unique:users'],
+            'address' => ['required'],
+            'password' => ['required', 'confirmed'],
+        ];
 
-        $user->sendEmailVerificationNotification();
+        $validator = Validator::make($request->all(), $validationRules);
 
-        return response($user, Response::HTTP_CREATED);
+        if($validator->fails())
+        {
+            return response(['errors' => $validator->errors()], Response::HTTP_BAD_REQUEST);
+        }
+        else
+        {
+            $user = new User;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            $user->sendEmailVerificationNotification();
+
+            return response($user, Response::HTTP_CREATED);
+        }
     }
 
     public function logout()
