@@ -81,7 +81,7 @@
         };
         
         this.isLoading = true;
-        this.clearData();
+        // this.clearData();
         
         fetch(url, payload)
         .then((response) => response.json())
