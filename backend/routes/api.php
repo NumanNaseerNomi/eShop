@@ -19,9 +19,10 @@ Route::middleware(['api'])->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
     Route::get('/email/verify/{id}', [AuthController::class, 'verify'])->name('verification.verify');
+    Route::get('/email/verify', [AuthController::class, 'notice'])->name('verification.notice');
 });
 
-Route::middleware('auth:api')->group(function () {
-    Route::get('/email/resend', [AuthController::class, 'resend'])->name('verification.resend');
+Route::middleware(['auth:api', 'verified'])->group(function () {
+    Route::get('/email/resend', [AuthController::class, 'resend'])->name('verification.resend')->withoutMiddleware(['verified']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
