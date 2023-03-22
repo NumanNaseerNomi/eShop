@@ -72,7 +72,31 @@
     {
       register()
       {
+        let url = useRuntimeConfig().public.API_URL + '/register';
+        let payload =
+        {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ email: this.email, password: this.password })
+        };
+        
         this.isLoading = true;
+        this.clearData();
+        
+        fetch(url, payload)
+        .then((response) => response.json())
+        .then((data) =>
+          {
+            data.message ? this.message = data.message : null;
+            this.isLoading = false;
+          }
+        )
+        .catch((error) => { console.error("Error:", error); });
+      },
+
+      clearData()
+      {
+        this.message = '';
       }
     }
   }
