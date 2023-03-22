@@ -76,7 +76,6 @@
           {
             console.log("DATA:", data);
             data.message ? this.message = data.message : null;
-            // this.verifyEmail = data;
             this.isLoading = false;
           }
         )
