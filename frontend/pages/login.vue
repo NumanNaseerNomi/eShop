@@ -6,6 +6,7 @@
             <div class="alert alert-success" role="alert" v-if="verifyEmail.length">
               A verification email has been sent at <strong>{{ verifyEmail }}</strong>
             </div>
+            <div class="alert alert-info" role="alert" v-if="message.length">{{ message }}</div>
             <form class="row g-3" @submit.prevent="login()">
                 <div class="col-md-12">
                     <label for="email" class="form-label">Email</label>
@@ -47,6 +48,7 @@
         password: '',
 
         verifyEmail: 'numan.naseer.nomi@gmail.com',
+        message: '',
         isLoading: false,
       }
 
@@ -57,7 +59,33 @@
     {
       login()
       {
+        let url = useRuntimeConfig().public.API_URL + '/login';
+        let payload =
+        {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ email: this.email, password: this.password })
+        };
+        
         this.isLoading = true;
+        this.clearData();
+        
+        fetch(url, payload)
+        .then((response) => response.json())
+        .then((data) =>
+          {
+            console.log("DATA:", data);
+            data.message ? this.message = data.message : null;
+            // this.verifyEmail = data;
+            this.isLoading = false;
+          }
+        )
+        .catch((error) => { console.error("Error:", error); });
+      },
+
+      clearData()
+      {
+        this.message = '';
       }
     }
   }
