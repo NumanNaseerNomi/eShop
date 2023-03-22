@@ -3,6 +3,11 @@
     <div class="row justify-content-center">
         <div class="col-11 col-md-5 border shadow px-3 py-4 mb-3">
             <h3 class ="d-flex justify-content-center mb-3">Create New Account</h3>
+            <div class="alert alert-danger" role="alert" v-if="errors">
+              <span v-for="error in errors">
+                <li v-for="item in error">{{ item }}</li>
+              </span>
+            </div>
             <form class="row g-3" @submit.prevent="register()">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>
@@ -63,6 +68,7 @@
         password_confirmation: '',
 
         isLoading: false,
+        errors: null
       }
 
       return data;
@@ -89,13 +95,13 @@
         };
         
         this.isLoading = true;
-        // this.clearData();
+        this.clearData();
         
         fetch(url, payload)
         .then((response) => response.json())
         .then((data) =>
           {
-            data.message ? this.message = data.message : null;
+            data.errors ? this.errors = data.errors : null;
             this.isLoading = false;
           }
         )
@@ -104,7 +110,7 @@
 
       clearData()
       {
-        this.message = '';
+        this.errors = null;
       }
     }
   }
