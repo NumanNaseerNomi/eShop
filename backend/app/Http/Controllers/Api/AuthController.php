@@ -90,4 +90,19 @@ class AuthController extends Controller
             return response(['message' => 'Email verification link sent on your email.'], Response::HTTP_OK);
         }
     }
+
+    public function notice()
+    {
+        return response(['message' => 'The email must be verified.'], Response::HTTP_OK);
+
+        if(Auth::user()->hasVerifiedEmail())
+        {
+            return response(['message' => 'The email is already verified.'], Response::HTTP_FORBIDDEN);
+        }
+        else
+        {
+            Auth::user()->sendEmailVerificationNotification();
+            return response(['message' => 'Email verification link sent on your email.'], Response::HTTP_OK);
+        }
+    }
 }
