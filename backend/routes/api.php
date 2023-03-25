@@ -18,6 +18,9 @@ use App\Http\Controllers\AuthController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::get('/email/verify/{id}', [AuthController::class, 'verify'])->name('verification.verify');
+Route::post('/email/resend', [AuthController::class, 'resend']);
+
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
