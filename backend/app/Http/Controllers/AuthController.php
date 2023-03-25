@@ -33,7 +33,7 @@ class AuthController extends Controller
                     return response(
                         [
                             'status' => 'error',
-                            'Your email address has not been verified.',
+                            'message' => 'Your email address has not been verified.',
                         ],
                         Response::HTTP_FORBIDDEN
                     );
