@@ -66,38 +66,6 @@ class AuthController extends Controller
         }
     }
 
-    public function logins(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
-
-        if (Auth::attempt($credentials)) {
-            $user = $request->user();
-
-            if (!$user->hasVerifiedEmail()) {
-                Auth::logout();
-                return response()->json([
-                    'status' => 'error',
-                    'message' => 'Your email address has not been verified.',
-                ], 401);
-            }
-
-            $token = $user->createToken('auth-token')->plainTextToken;
-            return response()->json([
-                'status' => 'success',
-                'access_token' => $token,
-                'token_type' => 'Bearer',
-            ]);
-        }
-
-        return response()->json([
-            'status' => 'error',
-            'message' => 'The provided credentials are incorrect.',
-        ], 401);
-    }
-
     public function register(Request $request)
     {
         // dd(11);
