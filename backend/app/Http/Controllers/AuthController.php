@@ -33,7 +33,13 @@ class AuthController extends Controller
                 
                 if($user->hasVerifiedEmail())
                 {
-                    dd(1111);
+                    return response()->json(
+                        [
+                            'status' => 'success',
+                            'access_token' => $user->createToken('auth-token')->plainTextToken,
+                            'user' => $user,
+                        ]
+                    );
                 }
                 else
                 {
