@@ -33,12 +33,13 @@ class AuthController extends Controller
                 
                 if($user->hasVerifiedEmail())
                 {
-                    return response()->json(
+                    return response(
                         [
                             'status' => 'success',
                             'accessToken' => $user->createToken('authToken')->plainTextToken,
                             'user' => $user,
-                        ]
+                        ],
+                        Response::HTTP_OK
                     );
                 }
                 else
@@ -96,5 +97,18 @@ class AuthController extends Controller
             // return response($user, Response::HTTP_CREATED);
             return response(['message' => 'Email verification link sent on your email.', 'data' => $user], Response::HTTP_CREATED);
         }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response(
+            [
+                'status' => 'success',
+                'message' => 'Logged out successfully.',
+            ],
+            Response::HTTP_OK
+        );
     }
 }
