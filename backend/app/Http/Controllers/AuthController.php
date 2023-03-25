@@ -20,7 +20,7 @@ class AuthController extends Controller
             return response(
                 [
                     'status' => 'error',
-                    'errors' => $validator->errors()
+                    'errors' => $validator->errors(),
                 ],
                 Response::HTTP_BAD_REQUEST
             );
