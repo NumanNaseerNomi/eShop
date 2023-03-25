@@ -22,5 +22,6 @@ Route::get('/email/verify/{id}', [AuthController::class, 'verify'])->name('verif
 Route::post('/email/resend', [AuthController::class, 'resend']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/changePassword', [AuthController::class, 'changePassword']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
