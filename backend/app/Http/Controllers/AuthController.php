@@ -54,7 +54,7 @@ class AuthController extends Controller
                         'status' => 'error',
                         'message' => 'The provided credentials do not match our records.',
                     ],
-                    Response::HTTP_FORBIDDEN
+                    Response::HTTP_UNAUTHORIZED
                 );
             }
         }
