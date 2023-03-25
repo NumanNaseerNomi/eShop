@@ -63,7 +63,8 @@ class AuthController extends Controller
 
             $user->sendEmailVerificationNotification();
 
-            return response($user, Response::HTTP_CREATED);
+            // return response($user, Response::HTTP_CREATED);
+            return response(['message' => 'Email verification link sent on your email.', 'data' => $user], Response::HTTP_CREATED);
         }
     }
 
