@@ -101,7 +101,7 @@ class AuthController extends Controller
                 [
                     'status' => 'success',
                     'message' => 'Email verification link sent on your email.',
-                    'data' => $user
+                    'data' => $user,
                 ],
                 Response::HTTP_CREATED
             );
