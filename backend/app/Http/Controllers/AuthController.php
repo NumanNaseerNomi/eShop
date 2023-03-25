@@ -17,7 +17,13 @@ class AuthController extends Controller
         
         if($validator->fails())
         {
-            return response(['status' => 'error', 'errors' => $validator->errors()], Response::HTTP_BAD_REQUEST);
+            return response(
+                [
+                    'status' => 'error',
+                    'errors' => $validator->errors()
+                ],
+                Response::HTTP_BAD_REQUEST
+            );
         }
         else
         {
@@ -26,7 +32,9 @@ class AuthController extends Controller
                 $user = $request->user();
                 
                 if($user->hasVerifiedEmail())
-                {}
+                {
+                    dd(1111);
+                }
                 else
                 {
                     Auth::logout();
@@ -35,7 +43,7 @@ class AuthController extends Controller
                             'status' => 'error',
                             'message' => 'Your email address has not been verified.',
                         ],
-                        Response::HTTP_FORBIDDEN
+                        Response::HTTP_UNAUTHORIZED 
                     );
                 }
             }
