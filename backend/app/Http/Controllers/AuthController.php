@@ -178,8 +178,29 @@ class AuthController extends Controller
         }
         else
         {
-            Auth::user()->sendEmailVerificationNotification();
-            return response(['message' => 'Email verification link sent on your email.'], Response::HTTP_OK);
+            $user = User::where('email', $request->email)->first();
+
+            if($user->hasVerifiedEmail())
+            {
+                return response(
+                    [
+                        'status' => 'success',
+                        'message' => 'The email already verified.'
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+            else
+            {
+                $user->sendEmailVerificationNotification();
+                return response(
+                    [
+                        'status' => 'success',
+                        'message' => 'Email verification link sent on your email.'
+                    ],
+                    Response::HTTP_OK
+                );
+            }
         }
     }
 }
