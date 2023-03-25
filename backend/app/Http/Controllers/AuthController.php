@@ -69,7 +69,6 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        // dd(11);
         $validationRules =
         [
             'name' => ['required'],
@@ -82,7 +81,12 @@ class AuthController extends Controller
 
         if($validator->fails())
         {
-            return response(['errors' => $validator->errors()], Response::HTTP_BAD_REQUEST);
+            return response(
+                [
+                    'status' => 'error',
+                    'errors' => $validator->errors(),
+                ],
+                Response::HTTP_BAD_REQUEST);
         }
         else
         {
@@ -92,10 +96,15 @@ class AuthController extends Controller
             $user->password = Hash::make($request->password);
             $user->save();
 
-            // $user->sendEmailVerificationNotification();
-
-            // return response($user, Response::HTTP_CREATED);
-            return response(['message' => 'Email verification link sent on your email.', 'data' => $user], Response::HTTP_CREATED);
+            $user->sendEmailVerificationNotification();
+            return response(
+                [
+                    'status' => 'success',
+                    'message' => 'Email verification link sent on your email.',
+                    'data' => $user
+                ],
+                Response::HTTP_CREATED
+            );
         }
     }
 
@@ -110,5 +119,45 @@ class AuthController extends Controller
             ],
             Response::HTTP_OK
         );
+    }
+
+    public function verify($id, Request $request)
+    {
+        if($request->hasValidSignature())
+        {
+            $user = User::findOrFail($id);
+
+            if($user->hasVerifiedEmail())
+            {
+                return response(
+                    [
+                        'status' => 'success',
+                        'message' => 'The email already verified.',
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+            else
+            {
+                $user->markEmailAsVerified();
+                return response(
+                    [
+                        'status' => 'success',
+                        'message' => 'The email verified successfully.',
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+        }
+        else
+        {
+            return response(
+                [
+                    'status' => 'error',
+                    'message' => 'Invalid or expired signature.',
+                ],
+                Response::HTTP_BAD_REQUEST
+            );
+        }
     }
 }
