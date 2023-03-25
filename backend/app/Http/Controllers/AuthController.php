@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -158,6 +159,27 @@ class AuthController extends Controller
                 ],
                 Response::HTTP_BAD_REQUEST
             );
+        }
+    }
+
+    public function resend(Request $request)
+    {
+        $validator = Validator::make($request->all(), ['email' => ['required', 'email', Rule::exists('users', 'email')]]);
+        
+        if($validator->fails())
+        {
+            return response(
+                [
+                    'status' => 'error',
+                    'errors' => $validator->errors(),
+                ],
+                Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+        else
+        {
+            Auth::user()->sendEmailVerificationNotification();
+            return response(['message' => 'Email verification link sent on your email.'], Response::HTTP_OK);
         }
     }
 }
