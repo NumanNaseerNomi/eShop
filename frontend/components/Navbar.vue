@@ -38,4 +38,23 @@
             </div>
         </div>
     </nav>
-  </template>
+</template>
+<script>
+    export default
+    {
+        data()
+        {
+            let data =
+            {
+                isAuth: false,
+            }
+
+            return data;
+        },
+
+        mounted()
+        {
+            this.isAuth = localStorage.getItem('accessToken') ? true : false;
+        }
+    }
+</script>
