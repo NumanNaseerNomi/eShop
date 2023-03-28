@@ -22,17 +22,17 @@
                     <li class="nav-item">
                         <NuxtLink class="nav-link text-light" to="/cart">My Cart</NuxtLink>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" v-if="isAuth">
                         <button class="btn text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
                         <ul class="dropdown-menu">
                             <li><NuxtLink class="dropdown-item" to="/profile">Profile</NuxtLink></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li>
-                                <NuxtLink v-if="true" class="dropdown-item" to="/login">Login</NuxtLink>
-                                <NuxtLink v-else class="dropdown-item" to="#">Logout</NuxtLink>
-                            </li>
+                            <li><NuxtLink class="dropdown-item" to="#">Logout</NuxtLink></li>
                         </ul>
+                    </li>
+                    <li class="nav-item" v-else>
+                        <NuxtLink class="nav-link text-light" to="/login">Login</NuxtLink>
                     </li>
                 </ul>
             </div>
