@@ -38,6 +38,12 @@
   </div>
 </template>
 <script>
+  definePageMeta(
+    {
+      middleware: ["guest"]
+    }
+  );
+
   export default
   {
     data()
