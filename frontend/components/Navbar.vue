@@ -28,7 +28,7 @@
                             <li><NuxtLink class="dropdown-item" to="/profile">Profile</NuxtLink></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="" @click="logout()">Logout</a></li>
+                            <li><a class="dropdown-item" href="" @click.prevent="logout()">Logout</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" v-else>
@@ -61,9 +61,26 @@
         {
             logout()
             {
-                localStorage.removeItem('accessToken');
-                localStorage.removeItem('authUser');
-                this.$router.push('/login');
+                let url = useRuntimeConfig().public.API_URL + '/logout';
+                let payload =
+                {
+                    method: "POST",
+                    headers:
+                    {
+                        "Content-Type": "application/json",
+                        'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+                    },
+                };
+                
+                fetch(url, payload)
+                .then((response) => response.json())
+                .then((data) =>
+                {
+                    localStorage.removeItem('accessToken');
+                    localStorage.removeItem('authUser');
+                    this.$router.push('/login');
+                })
+                .catch((error) => { console.error("Error:", error); });
             },
 
             getIsAuth()
