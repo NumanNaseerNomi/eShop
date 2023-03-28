@@ -76,6 +76,13 @@
           {
             data.message ? this.message = data.message : null;
             this.isLoading = false;
+            
+            if(data.status == 'success')
+            {
+              localStorage.setItem('accessToken', data.accessToken);
+              localStorage.setItem('authUser', JSON.stringify(data.user));
+              this.$router.push('/');
+            }
           }
         )
         .catch((error) => { console.error("Error:", error); });
