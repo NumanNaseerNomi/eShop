@@ -28,7 +28,7 @@
                             <li><NuxtLink class="dropdown-item" to="/profile">Profile</NuxtLink></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><NuxtLink class="dropdown-item" to="#">Logout</NuxtLink></li>
+                            <li><a class="dropdown-item" href="" @click="logout()">Logout</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" v-else>
@@ -54,7 +54,22 @@
 
         mounted()
         {
-            this.isAuth = localStorage.getItem('accessToken') ? true : false;
+            this.getIsAuth();
+        },
+
+        methods:
+        {
+            logout()
+            {
+                localStorage.removeItem('accessToken');
+                localStorage.removeItem('authUser');
+                this.$router.push('/login');
+            },
+
+            getIsAuth()
+            {
+                this.isAuth = localStorage.getItem('accessToken') ? true : false;
+            },
         }
     }
 </script>
