@@ -241,7 +241,7 @@ class AuthController extends Controller
                 return response(
                     [
                         'status' => 'error',
-                        'message' => 'The current password is incorrect.',
+                        'errors' => [['The current password is incorrect.']],
                     ],
                     Response::HTTP_UNPROCESSABLE_ENTITY
                 );
