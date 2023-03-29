@@ -2,13 +2,13 @@
   <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-11 col-md-5 border shadow px-3 py-4 mb-3">
-            <h3 class ="d-flex justify-content-center mb-3">Profile</h3>
+            <h3 class ="d-flex justify-content-center mb-3">Profile Settings</h3>
             <div class="alert alert-danger" role="alert" v-if="errors">
               <span v-for="error in errors">
                 <li v-for="item in error">{{ item }}</li>
               </span>
             </div>
-            <form class="row g-3" @submit.prevent="register()">
+            <form class="row g-3" @submit.prevent="updateProfile()">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control" v-model="name" required>
@@ -46,7 +46,7 @@
                 </div>
                 <hr/>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <NuxtLink class="btn btn-outline-success" to="/login">Login</NuxtLink>
+                    <NuxtLink class="btn btn-outline-success" to="/changePassword">Change Password</NuxtLink>
                 </div>
             </form>
         </div>
@@ -83,7 +83,7 @@
     
     methods:
     {
-      register()
+      updateProfile()
       {
         let url = useRuntimeConfig().public.API_URL + '/register';
         let payload =
