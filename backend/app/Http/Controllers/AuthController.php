@@ -251,7 +251,14 @@ class AuthController extends Controller
 
     public function updateProfile(Request $request)
     {
-        $validator = Validator::make($request->all(), ['current_password' => ['required'], 'password' => ['required', 'confirmed', 'min:5', 'different:current_password']]);
+        $validationRules =
+        [
+            'name' => ['required'],
+            'email' => ['required', 'email', 'unique:users'],
+            'address' => ['required'],
+        ];
+
+        $validator = Validator::make($request->all(), $validationRules);
 
         if($validator->fails())
         {
@@ -260,36 +267,25 @@ class AuthController extends Controller
                     'status' => 'error',
                     'errors' => $validator->errors(),
                 ],
-                Response::HTTP_UNPROCESSABLE_ENTITY
-            );
+                Response::HTTP_BAD_REQUEST);
         }
         else
         {
             $user = $request->user();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->address = $request->address;
+            $user->save();
 
-            if(Hash::check($request->current_password, $user->password))
-            {
-                $user->password = Hash::make($request->password);
-                $user->save();
-
-                return response(
-                    [
-                        'status' => 'success',
-                        'message' => 'Password changed successfully.',
-                    ],
-                    Response::HTTP_OK
-                );
-            }
-            else
-            {
-                return response(
-                    [
-                        'status' => 'error',
-                        'message' => 'The current password is incorrect.',
-                    ],
-                    Response::HTTP_UNPROCESSABLE_ENTITY
-                );
-            }
+            $user->sendEmailVerificationNotification();
+            return response(
+                [
+                    'status' => 'success',
+                    'message' => 'Email verification link sent on your email.',
+                    'data' => $user,
+                ],
+                Response::HTTP_OK
+            );
         }
     }
 }
