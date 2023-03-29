@@ -3,6 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-11 col-md-5 border shadow px-3 py-4 mb-3">
             <h3 class ="d-flex justify-content-center mb-3">Create New Account</h3>
+            <div class="alert alert-info" role="alert" v-if="message">{{ message }}</div>
             <div class="alert alert-danger" role="alert" v-if="errors">
               <span v-for="error in errors">
                 <li v-for="item in error">{{ item }}</li>
@@ -68,6 +69,7 @@
         password_confirmation: '',
 
         isLoading: false,
+        message: null,
         errors: null
       }
 
@@ -103,6 +105,11 @@
           {
             data.errors ? this.errors = data.errors : null;
             this.isLoading = false;
+
+            if(data.status == 'success')
+            {
+              data.message ? this.message = data.message : null;
+            }
           }
         )
         .catch((error) => { console.error("Error:", error); });
@@ -111,6 +118,7 @@
       clearData()
       {
         this.errors = null;
+        this.message = null;
       }
     }
   }
