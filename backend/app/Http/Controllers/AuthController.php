@@ -254,7 +254,7 @@ class AuthController extends Controller
         $validationRules =
         [
             'name' => ['required'],
-            'email' => ['required', 'email', 'unique:users'],
+            'email' => ['required', 'email', Rule::unique('users')->ignore($request->user()->id)],
             'address' => ['required'],
         ];
 
@@ -273,16 +273,16 @@ class AuthController extends Controller
         {
             $user = $request->user();
             $user->name = $request->name;
-            $user->email = $request->email;
+            // $user->email = $request->email;
             $user->address = $request->address;
-            $user->save();
+            $user->update();
 
-            $user->sendEmailVerificationNotification();
+            // $user->sendEmailVerificationNotification();
             return response(
                 [
                     'status' => 'success',
-                    'message' => 'Email verification link sent on your email.',
-                    'data' => $user,
+                    'message' => 'Profile Updated Successfully.',
+                    'user' => $user,
                 ],
                 Response::HTTP_OK
             );
