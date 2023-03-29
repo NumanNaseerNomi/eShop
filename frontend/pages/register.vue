@@ -55,6 +55,12 @@
   </div>
 </template>
 <script>
+  definePageMeta(
+    {
+      middleware: ["guest"]
+    }
+  );
+  
   export default
   {
     data()
@@ -109,6 +115,7 @@
             if(data.status == 'success')
             {
               data.message ? this.message = data.message : null;
+              this.$router.push('/login');
             }
           }
         )
