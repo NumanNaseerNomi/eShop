@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" v-model="email" required>
+                    <input type="email" name="email" class="form-control" v-model="email" disabled required>
                 </div>
                 <div class="col-md-12">
                     <label for="address" class="form-label">Address</label>
@@ -70,18 +70,20 @@
     {
       updateProfile()
       {
-        let url = useRuntimeConfig().public.API_URL + '/register';
+        let url = useRuntimeConfig().public.API_URL + '/updateProfile';
         let payload =
         {
           method: "POST",
-          headers: {"Content-Type": "application/json"},
+          headers:
+          {
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+          },
           body: JSON.stringify(
             {
               name: this.name,
               email: this.email,
               address: this.address,
-              password: this.password,
-              password_confirmation: this.password_confirmation,
             }
           )
         };
@@ -95,6 +97,12 @@
           {
             data.errors ? this.errors = data.errors : null;
             this.isLoading = false;
+
+            if(data.status == 'success')
+            {
+              localStorage.setItem('authUser', JSON.stringify(data.user));
+              useAuthUserState().value = data.user;
+            }
           }
         )
         .catch((error) => { console.error("Error:", error); });
