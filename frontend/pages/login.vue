@@ -87,6 +87,8 @@
             {
               localStorage.setItem('accessToken', data.accessToken);
               localStorage.setItem('authUser', JSON.stringify(data.user));
+              useIsAuthState().value = true;
+              useAuthUserState().value = data.user;
               this.$router.push('/');
             }
           }
