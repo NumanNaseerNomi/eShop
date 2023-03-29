@@ -46,7 +46,8 @@
         {
             let data =
             {
-                isAuth: false,
+                isAuth: useIsAuthState(),
+                authUser: useAuthUserState(),
             }
 
             return data;
@@ -78,6 +79,7 @@
                 {
                     localStorage.removeItem('accessToken');
                     localStorage.removeItem('authUser');
+                    this.getIsAuth();
                     this.$router.push('/login');
                 })
                 .catch((error) => { console.error("Error:", error); });
@@ -85,7 +87,8 @@
 
             getIsAuth()
             {
-                this.isAuth = localStorage.getItem('accessToken') ? true : false;
+                useIsAuthState().value = localStorage.getItem('accessToken') ? true : false;
+                useAuthUserState().value = JSON.parse(localStorage.getItem('authUser')) ?? null;
             },
         }
     }
