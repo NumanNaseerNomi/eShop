@@ -25,14 +25,14 @@
                     <label for="address" class="form-label">Address</label>
                     <input type="text" name="address" class="form-control" v-model="address" required>
                 </div>
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" v-model="password" required>
                 </div> 
                 <div class="col-md-6">
                     <label for="password_confirmation" class="form-label">Confirm Password</label>
                     <input type="password" name="password_confirmation" class="form-control" v-model="password_confirmation" required>
-                </div>
+                </div> -->
                 <div class="col-12 mb-3">
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-success" :disabled="isLoading">
@@ -40,7 +40,7 @@
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Loading...
                           </span>
-                          <span v-else>Register</span>
+                          <span v-else>Update</span>
                         </button>
                     </div>
                 </div>
