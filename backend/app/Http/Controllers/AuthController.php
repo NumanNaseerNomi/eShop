@@ -248,4 +248,48 @@ class AuthController extends Controller
             }
         }
     }
+
+    public function updateProfile(Request $request)
+    {
+        $validator = Validator::make($request->all(), ['current_password' => ['required'], 'password' => ['required', 'confirmed', 'min:5', 'different:current_password']]);
+
+        if($validator->fails())
+        {
+            return response(
+                [
+                    'status' => 'error',
+                    'errors' => $validator->errors(),
+                ],
+                Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+        else
+        {
+            $user = $request->user();
+
+            if(Hash::check($request->current_password, $user->password))
+            {
+                $user->password = Hash::make($request->password);
+                $user->save();
+
+                return response(
+                    [
+                        'status' => 'success',
+                        'message' => 'Password changed successfully.',
+                    ],
+                    Response::HTTP_OK
+                );
+            }
+            else
+            {
+                return response(
+                    [
+                        'status' => 'error',
+                        'message' => 'The current password is incorrect.',
+                    ],
+                    Response::HTTP_UNPROCESSABLE_ENTITY
+                );
+            }
+        }
+    }
 }
