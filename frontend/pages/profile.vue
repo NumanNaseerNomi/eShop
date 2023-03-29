@@ -17,22 +17,10 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" name="email" class="form-control" v-model="email" required>
                 </div>
-                <!-- <div class="col-md-6">
-                    <label for="contactNumber" class="form-label">Contact Number</label>
-                    <input type="number" name="contactNumber" class="form-control" v-model="contactNumber" required>
-                </div> -->
                 <div class="col-md-12">
                     <label for="address" class="form-label">Address</label>
                     <input type="text" name="address" class="form-control" v-model="address" required>
                 </div>
-                <!-- <div class="col-md-6">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" v-model="password" required>
-                </div> 
-                <div class="col-md-6">
-                    <label for="password_confirmation" class="form-label">Confirm Password</label>
-                    <input type="password" name="password_confirmation" class="form-control" v-model="password_confirmation" required>
-                </div> -->
                 <div class="col-12 mb-3">
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-success" :disabled="isLoading">
@@ -69,10 +57,7 @@
         authUser: useAuthUserState(),
         name: useAuthUserState().value.name,
         email: useAuthUserState().value.email,
-        contactNumber: '',
         address: useAuthUserState().value.address,
-        password: '',
-        password_confirmation: '',
 
         isLoading: false,
         errors: null
