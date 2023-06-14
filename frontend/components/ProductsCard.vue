@@ -5,13 +5,13 @@
         <div class="col" v-for="product in products">
           <div class="card h-100 text-decoration-none text-body" to="/product/detail">
             <NuxtLink to="/product/detail">
-              <img :src="product.url" class="card-img-top" alt="...">
+              <img :src="product.thumbnail" class="card-img-top" alt="...">
             </NuxtLink>
             <div class="card-body h6 m-0">
-              <p class="card-text text-truncate">{{ product.title }}</p>
-              <span class="text-success mx-2 text-nowrap">PKR 500</span>
-              <del class="text-danger mx-2 text-nowrap">PKR 500</del>
-              <span class="text-success mx-2 text-nowrap">20% OFF</span>
+              <p class="card-text text-truncate">{{ product.name }}</p>
+              <span class="text-success mx-2 text-nowrap">PKR {{ product.price - (product.price * ( product.discount / 100)) }}</span>
+              <del class="text-danger mx-2 text-nowrap">PKR {{ product.price }}</del>
+              <span class="text-success mx-2 text-nowrap">{{ product.discount }}% OFF</span>
               <div class="d-grid gap-2 m-2">
                 <button class="btn btn-success" type="button" @click="addToCart()">Add to Cart</button>
               </div>
@@ -70,11 +70,11 @@
       {
         this.isLoading = true;
 
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=4&&_page=' + this.page)
+        fetch('http://localhost:8000/api/getProducts')
         .then(response => response.json())
         .then(data =>
           {
-            this.products.push(...data);
+            this.products.push(...data.data.data);
             this.isLoading = false;
             this.page++;
 

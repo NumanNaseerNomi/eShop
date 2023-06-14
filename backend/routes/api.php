@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/email/verify/{id}', [AuthController::class, 'verify'])->name('verification.verify');
 Route::post('/email/resend', [AuthController::class, 'resend']);
+
+Route::get('/getProducts', [ProductsController::class, 'getProducts']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/updateProfile', [AuthController::class, 'updateProfile']);
