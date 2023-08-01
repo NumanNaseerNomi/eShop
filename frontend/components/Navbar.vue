@@ -29,7 +29,6 @@
                         <button class="btn text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
                         <ul class="dropdown-menu">
                             <li><NuxtLink class="dropdown-item" to="/profile">Profile</NuxtLink></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="" @click.prevent="logout()">Logout</a></li>
                         </ul>
