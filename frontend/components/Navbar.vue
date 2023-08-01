@@ -20,7 +20,7 @@
             <div>
                 <ul class="nav justify-content-end">
                     <li class="nav-item" v-if="authUser?.is_admin">
-                        <NuxtLink class="nav-link text-light" to="/cart">My Store</NuxtLink>
+                        <NuxtLink class="nav-link text-light" to="/store">My Store</NuxtLink>
                     </li>
                     <li class="nav-item" v-else>
                         <NuxtLink class="nav-link text-light" to="/cart">My Cart</NuxtLink>
