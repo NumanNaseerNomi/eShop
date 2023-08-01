@@ -19,11 +19,11 @@
             </div> -->
             <div>
                 <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                        <NuxtLink class="nav-link text-light" to="/cart">My Cart</NuxtLink>
-                    </li>
                     <li class="nav-item" v-if="authUser?.is_admin">
                         <NuxtLink class="nav-link text-light" to="/cart">My Store</NuxtLink>
+                    </li>
+                    <li class="nav-item">
+                        <NuxtLink class="nav-link text-light" to="/cart">My Cart</NuxtLink>
                     </li>
                     <li class="nav-item dropdown" v-if="isAuth">
                         <button class="btn text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
