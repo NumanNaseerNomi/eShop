@@ -38,8 +38,12 @@
         <tr>
           <th scope="row">1</th>
           <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiKIGiH9HTFluylskypHMDTStOHsXMTzHDA&usqp=CAU" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>Shirt</td>
+          <td>Black Shirt</td>
+          <td>PKR 1000</td>
+          <td>10%</td>
+          <td>Active</td>
+          <td>Options</td>
         </tr>
       </tbody>
     </table>
