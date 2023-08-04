@@ -35,7 +35,7 @@
                   <input type="number" class="form-control" id="inputDiscount">
                 </div>
                 <div class="col-md-6">
-                  <label for="formThumbnail" class="form-label">Default file input example</label>
+                  <label for="formThumbnail" class="form-label">Thumbnail</label>
                   <input class="form-control" type="file" id="formThumbnail" accept="image/*">
                 </div>
                 <div class="col-md-6">
