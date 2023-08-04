@@ -15,28 +15,28 @@
             <div class="modal-body">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label for="inputName4" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName4">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName4" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName4">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName4" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName4">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName4" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName4">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName4" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName4">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName4" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName4">
+                  <label for="inputName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputName">
                 </div>
               </div>
             </div>
