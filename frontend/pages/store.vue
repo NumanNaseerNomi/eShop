@@ -21,7 +21,7 @@
                 <label for="inputPassword4" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword4">
               </div>
-              <div class="col-12">
+              <!-- <div class="col-12">
                 <label for="inputAddress" class="form-label">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
               </div>
@@ -43,7 +43,7 @@
               <div class="col-md-2">
                 <label for="inputZip" class="form-label">Zip</label>
                 <input type="text" class="form-control" id="inputZip">
-              </div>
+              </div> -->
               <div class="col-12">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="gridCheck">
