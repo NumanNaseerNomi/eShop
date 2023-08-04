@@ -21,14 +21,14 @@
                 <label for="inputPassword4" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword4">
               </div>
-              <div class="col-12">
+              <!-- <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
-              </div>
+              </div> -->
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary">Save</button>
           </div>
         </div>
       </div>
