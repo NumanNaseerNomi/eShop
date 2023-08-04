@@ -11,6 +11,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <form>
           <div class="modal-body">
             <div class="row g-3">
               <div class="col-md-6">
@@ -27,6 +28,7 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save</button>
           </div>
+          </form>
         </div>
       </div>
     </div>
