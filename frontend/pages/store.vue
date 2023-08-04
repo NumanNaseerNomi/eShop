@@ -45,7 +45,7 @@
           <td>Active</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
               <button type="button" class="btn btn-danger">Delete</button>
             </div>
           </td>
