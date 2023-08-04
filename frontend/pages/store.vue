@@ -19,16 +19,16 @@
                   <input type="text" class="form-control" id="inputName">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName">
+                  <label for="inputDescription" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="inputDescription">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName">
+                  <label for="inputPrice" class="form-label">Price</label>
+                  <input type="number" class="form-control" id="inputPrice">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName">
+                  <label for="inputDiscount" class="form-label">Discount</label>
+                  <input type="number" class="form-control" id="inputDiscount">
                 </div>
                 <div class="col-md-6">
                   <label for="inputName" class="form-label">Name</label>
