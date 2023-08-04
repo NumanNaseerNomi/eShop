@@ -22,7 +22,7 @@
                   <label for="inputName" class="form-label">Name</label>
                   <input type="text" class="form-control" id="inputName">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="inputDescription" class="form-label">Description</label>
                   <input type="text" class="form-control" id="inputDescription">
                 </div>
