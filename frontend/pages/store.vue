@@ -4,7 +4,7 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <button class="btn btn-success" type="button">Add Item</button>
     </div>
-    <table class="table">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">#</th>
