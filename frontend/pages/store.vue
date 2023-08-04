@@ -43,7 +43,12 @@
           <td>PKR 1000</td>
           <td>10%</td>
           <td>Active</td>
-          <td>Options</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
