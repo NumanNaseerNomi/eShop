@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Default file input example</label>
-                  <input class="form-control" type="file" id="formThumbnail">
+                  <input class="form-control" type="file" id="formThumbnail" accept="image/*">
                 </div>
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
