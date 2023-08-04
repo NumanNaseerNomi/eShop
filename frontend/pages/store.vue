@@ -2,7 +2,7 @@
   <div class="container my-4">
     <h1>My Store</h1>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-primary" type="button">Button</button>
+      <button class="btn btn-success" type="button">Add Item</button>
     </div>
     <!-- <template v-if="isLoading">
       <template v-for="n in 2">
