@@ -30,13 +30,12 @@
                   <label for="inputDiscount" class="form-label">Discount</label>
                   <input type="number" class="form-control" id="inputDiscount">
                 </div>
-                <div class="col-md-6">
-                  <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName">
-                </div>
-                <div class="col-md-6">
-                  <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName">
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
                 </div>
               </div>
             </div>
