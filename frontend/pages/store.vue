@@ -1,7 +1,7 @@
 <template>
   <div class="container my-4">
-    <h1>My Cart Items</h1>
-    <template v-if="isLoading">
+    <h1>My Store</h1>
+    <!-- <template v-if="isLoading">
       <template v-for="n in 2">
         <div class="card mb-3">
           <div class="row g-0">
@@ -44,7 +44,7 @@
           </div>
         </div>
       </template>
-    </template>
+    </template> -->
   </div>
 </template>
 <script>
