@@ -21,9 +21,6 @@
                 <label for="inputPassword4" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword4">
               </div>
-              <!-- <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-              </div> -->
             </div>
           </div>
           <div class="modal-footer">
