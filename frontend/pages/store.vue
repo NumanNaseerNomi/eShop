@@ -25,9 +25,13 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Thumbnail</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Discount</th>
+          <th scope="col">Status</th>
+          <th scope="col">Options</th>
         </tr>
       </thead>
       <tbody>
