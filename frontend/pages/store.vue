@@ -34,7 +34,11 @@
                   <label for="inputDiscount" class="form-label">Discount</label>
                   <input type="number" class="form-control" id="inputDiscount">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
+                  <label for="formThumbnail" class="form-label">Default file input example</label>
+                  <input class="form-control" type="file" id="formThumbnail">
+                </div>
+                <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
                   <select id="inputStatus" class="form-select">
                     <option selected>Choose...</option>
