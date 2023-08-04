@@ -4,13 +4,6 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item</button>
     </div>
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
