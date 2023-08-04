@@ -18,10 +18,6 @@
                   <label for="inputName4" class="form-label">Name</label>
                   <input type="text" class="form-control" id="inputName4">
                 </div>
-                <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword4">
-                </div>
               </div>
             </div>
             <div class="modal-footer">
