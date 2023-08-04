@@ -12,7 +12,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="row g-3">
+            <div class="row g-3">
               <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">Email</label>
                 <input type="email" class="form-control" id="inputEmail4">
@@ -24,7 +24,7 @@
               <!-- <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
               </div> -->
-            </form>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
