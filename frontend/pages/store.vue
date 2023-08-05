@@ -155,7 +155,6 @@
         .then((response) => response.json())
         .then((data) =>
           {
-            data.message ? this.message = data.message : null;
             this.isSaving = false;
             
             if(data.status == 'success')
