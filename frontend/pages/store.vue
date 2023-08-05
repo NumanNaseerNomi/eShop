@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputQuantity" class="form-label">Quantity</label>
-                  <input type="number" class="form-control" id="inputQuantity">
+                  <input type="number" class="form-control" id="inputQuantity" :value="currentItem?.quantity">
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
