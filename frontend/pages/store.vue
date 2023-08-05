@@ -160,11 +160,7 @@
             
             if(data.status == 'success')
             {
-              localStorage.setItem('accessToken', data.accessToken);
-              localStorage.setItem('authUser', JSON.stringify(data.user));
-              useIsAuthState().value = true;
-              useAuthUserState().value = data.user;
-              this.$router.push('/');
+              this.$refs.closeButton.click();
             }
           }
         )
