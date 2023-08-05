@@ -16,7 +16,7 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="inputID" class="form-label">ID</label>
-                  <input type="number" class="form-control" id="inputID" :value="currentItem?.id" disabled>
+                  <input type="number" class="form-control" id="inputID" :value="currentItem.id" disabled>
                 </div>
                 <div class="col-md-6">
                   <label for="inputName" class="form-label">Name</label>
@@ -24,23 +24,23 @@
                 </div>
                 <div class="col-md-12">
                   <label for="inputDescription" class="form-label">Description</label>
-                  <input type="text" class="form-control" id="inputDescription" :value="currentItem?.description" required>
+                  <input type="text" class="form-control" id="inputDescription" :value="currentItem.description" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputPrice" class="form-label">Price</label>
-                  <input type="number" class="form-control" id="inputPrice" :value="currentItem?.price" required>
+                  <input type="number" class="form-control" id="inputPrice" :value="currentItem.price" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputQuantity" class="form-label">Quantity</label>
-                  <input type="number" class="form-control" id="inputQuantity" :value="currentItem?.quantity" required>
+                  <input type="number" class="form-control" id="inputQuantity" :value="currentItem.quantity" required>
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
-                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" :value="currentItem?.thumbnail" required>
+                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" :value="currentItem.thumbnail" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
-                  <select id="inputStatus" class="form-select" :value="currentItem?.status" required>
+                  <select id="inputStatus" class="form-select" :value="currentItem.status" required>
                     <option value="1">Active</option>
                     <option value="0">Inactive</option>
                   </select>
