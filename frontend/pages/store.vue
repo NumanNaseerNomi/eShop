@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputPrice" class="form-label">Price</label>
-                  <input type="number" class="form-control" id="inputPrice" :value="currentItem?.price">
+                  <input type="number" class="form-control" id="inputPrice" :value="currentItem?.price" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputQuantity" class="form-label">Quantity</label>
