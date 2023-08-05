@@ -101,7 +101,7 @@
       let data =
       {
         items: null,
-        saveItem: null,
+        currentItem: null,
         isLoading: false,
       }
 
@@ -131,7 +131,7 @@
 
       saveItem()
       {
-        alert('addToCart()');
+        alert(this.currentItem);
       }
     }
   }
