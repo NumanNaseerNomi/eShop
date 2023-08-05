@@ -133,7 +133,7 @@
       {
         alert(this.currentItem);
         this.$refs.closeButton.click();
-      }
+      },
     }
   }
 </script>
