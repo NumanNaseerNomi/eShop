@@ -108,6 +108,7 @@
         items: null,
         currentItem: {},
         isLoading: false,
+        isSaving: false,
       }
 
       return data;
