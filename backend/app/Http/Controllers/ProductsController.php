@@ -20,4 +20,18 @@ class ProductsController extends Controller
             Response::HTTP_OK
         );
     }
+
+    public function saveProduct(Request $request)
+    {
+        dd($request);
+        $products = Product::paginate();
+
+        return response(
+            [
+                'status' => 'success',
+                'data' => $products,
+            ],
+            Response::HTTP_OK
+        );
+    }
 }
