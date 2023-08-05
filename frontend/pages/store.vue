@@ -63,7 +63,7 @@
           <th scope="col">Name</th>
           <th scope="col">Description</th>
           <th scope="col">Price</th>
-          <th scope="col">Discount</th>
+          <th scope="col">Quantity</th>
           <th scope="col">Status</th>
           <th scope="col">Options</th>
         </tr>
@@ -75,7 +75,7 @@
           <td>Shirt</td>
           <td>Black Shirt</td>
           <td>PKR 1000</td>
-          <td>10%</td>
+          <td>12</td>
           <td>Active</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
