@@ -49,10 +49,10 @@
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary">
-                <div class="spinner-border spinner-border-sm" role="status">
+                <div class="spinner-border spinner-border-sm" role="status" v-if="isSaving">
                   <span class="visually-hidden">Loading...</span>
                 </div>
-                Save
+                <span v-else>Save</span>
               </button>
             </div>
           </form>
