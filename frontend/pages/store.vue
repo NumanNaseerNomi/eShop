@@ -138,6 +138,14 @@
       saveItem()
       {
         let url = useRuntimeConfig().public.API_URL + '/saveProduct';
+
+        let formData = new FormData();
+  
+        for(let field in this.currentItem)
+        {
+          formData.append(field, this.currentItem[field]);
+        }
+
         let payload =
         {
           method: "POST",
@@ -146,7 +154,7 @@
             "Content-Type": "application/json",
             'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
           },
-          body: JSON.stringify(this.currentItem)
+          body: formData
         };
         
         this.isSaving = true;
