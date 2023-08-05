@@ -129,7 +129,7 @@
         .then(response => response.json())
         .then(json =>
           {
-            this.items = json;
+            this.items = json.data.data;
             this.isLoading = false;
           }
         );
