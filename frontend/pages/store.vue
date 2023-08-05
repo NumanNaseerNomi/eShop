@@ -85,6 +85,7 @@
           </td>
         </tr>
       </tbody>
+      <h2>Store is Empty</h2>
     </table>
   </div>
 </template>
