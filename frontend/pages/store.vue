@@ -48,7 +48,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" :class="{'disabled': isSaving}">
                 <div class="spinner-border spinner-border-sm" role="status" v-if="isSaving">
                   <span class="visually-hidden">Loading...</span>
                 </div>
