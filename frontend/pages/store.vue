@@ -125,7 +125,7 @@
       {
         this.isLoading = true;
 
-        fetch('http://localhost:8000/api/saveProduct')
+        fetch('http://localhost:8000/api/getProducts')
         .then(response => response.json())
         .then(json =>
           {
