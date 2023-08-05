@@ -91,7 +91,7 @@
         </tr>
       </tbody>
     </table>
-    <h2 class="text-center">Store is Empty</h2>
+    <h2 class="text-center" v-if="!items && !isLoading">Store is Empty</h2>
   </div>
 </template>
 <script>
