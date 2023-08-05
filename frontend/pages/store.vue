@@ -137,7 +137,7 @@
 
       saveItem()
       {
-        let url = useRuntimeConfig().public.API_URL + '/login';
+        let url = useRuntimeConfig().public.API_URL + '/saveProduct';
         let payload =
         {
           method: "POST",
