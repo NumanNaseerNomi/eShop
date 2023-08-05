@@ -104,12 +104,12 @@
 
     created()
     {
-      this.getCartItems();
+      this.getStoreItems();
     },
     
     methods:
     {
-      getCartItems()
+      getStoreItems()
       {
         this.isLoading = true;
 
