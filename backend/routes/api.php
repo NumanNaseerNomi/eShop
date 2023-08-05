@@ -29,7 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/changePassword', [AuthController::class, 'changePassword']);
     Route::post('/logout', [AuthController::class, 'logout']);
 
-    // Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
+    Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
 });
 
-Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
+// Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
