@@ -16,7 +16,7 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="inputID" class="form-label">ID</label>
-                  <input type="number" class="form-control" id="inputID">
+                  <input type="number" class="form-control" id="inputID" disabled>
                 </div>
                 <div class="col-md-6">
                   <label for="inputName" class="form-label">Name</label>
