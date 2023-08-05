@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <table class="table table-striped align-middle">
+    <table class="table table-striped align-middle" v-if="items.length">
       <thead>
         <tr>
           <th scope="col">#</th>
