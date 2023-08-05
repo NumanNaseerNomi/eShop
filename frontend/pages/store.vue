@@ -101,6 +101,7 @@
       let data =
       {
         items: null,
+        saveItem: null,
         isLoading: false,
       }
 
