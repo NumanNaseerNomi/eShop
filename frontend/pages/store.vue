@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
-                  <select id="inputStatus" class="form-select" v-model="currentItem.status" required>
+                  <select id="inputStatus" class="form-select" v-model="currentItem.isActive" required>
                     <option value="1">Active</option>
                     <option value="0">Inactive</option>
                   </select>
