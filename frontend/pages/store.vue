@@ -55,11 +55,6 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center" v-if="isLoading">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    </div>
     <table class="table table-striped align-middle">
       <thead>
         <tr>
@@ -91,6 +86,11 @@
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-center" v-if="isLoading">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
     <h2 class="text-center" v-if="!items && !isLoading">Store is Empty</h2>
   </div>
 </template>
