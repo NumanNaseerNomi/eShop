@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
-                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" :value="currentItem.thumbnail" required>
+                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" @change="handleFileChange($event)" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
@@ -137,8 +137,7 @@
 
       handleFileChange(event)
       {
-        const file = event.target.files[0];
-        this.currentItem.thumbnail = file;
+        this.currentItem.thumbnail = event.target.files[0];
       },
     }
   }
