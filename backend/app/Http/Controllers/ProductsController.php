@@ -41,18 +41,4 @@ class ProductsController extends Controller
         
         return response()->json(['message' => 'Product saved successfully', 'data' => $product]);
     }
-
-    public function saveProducts(Request $request)
-    {
-        dd(1);
-        $products = Product::paginate();
-
-        return response(
-            [
-                'status' => 'success',
-                'data' => $products,
-            ],
-            Response::HTTP_OK
-        );
-    }
 }
