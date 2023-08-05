@@ -85,6 +85,11 @@
           }
         );
       },
+
+      addToCart()
+      {
+        alert('addToCart()');
+      }
     }
   }
 </script>
