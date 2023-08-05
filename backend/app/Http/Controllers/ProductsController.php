@@ -30,7 +30,7 @@ class ProductsController extends Controller
                 'description' => 'required|string',
                 'price' => 'required|numeric',
                 'quantity' => 'required|numeric',
-                // 'thumbnail' => 'required|numeric',
+                'thumbnail' => 'required|string',
                 'isActive' => 'required|boolean',
             ]
         );
