@@ -41,7 +41,7 @@
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
                   <select id="inputStatus" class="form-select" :value="currentItem?.status" required>
-                    <option selected>Choose...</option>
+                    <option value="1">Active</option>
                     <option>...</option>
                   </select>
                 </div>
