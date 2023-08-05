@@ -134,11 +134,6 @@
         alert(this.currentItem);
         this.$refs.closeButton.click();
       },
-
-      handleFileChange(event)
-      {
-        this.currentItem.thumbnail = event.target.files[0];
-      },
     }
   }
 </script>
