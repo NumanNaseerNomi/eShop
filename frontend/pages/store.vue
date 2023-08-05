@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName" :value="currentItem?.name" required>
+                  <input type="text" class="form-control" id="inputName" v-model="currentItem.name" required>
                 </div>
                 <div class="col-md-12">
                   <label for="inputDescription" class="form-label">Description</label>
@@ -101,7 +101,7 @@
       let data =
       {
         items: null,
-        currentItem: null,
+        currentItem: {},
         isLoading: false,
       }
 
