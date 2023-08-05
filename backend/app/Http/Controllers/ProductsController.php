@@ -23,7 +23,28 @@ class ProductsController extends Controller
 
     public function saveProduct(Request $request)
     {
-        dd($request);
+        $validatedData = $request->validate(
+            [
+                'id' => 'nullable|exists:products,id',
+                'name' => 'required|string',
+                'description' => 'required|string',
+                'price' => 'required|numeric',
+                'quantity' => 'required|numeric',
+                // 'thumbnail' => 'required|numeric',
+                'status' => 'required|boolean',
+            ]
+        );
+
+        $productId = $validatedData['id'] ?? null;
+        
+        $product = Product::updateOrCreate(['id' => $productId], $validatedData);
+        
+        return response()->json(['message' => 'Product saved successfully', 'data' => $product]);
+    }
+
+    public function saveProducts(Request $request)
+    {
+        dd(1);
         $products = Product::paginate();
 
         return response(
