@@ -11,8 +11,6 @@ class ProductsController extends Controller
     public function getProducts(Request $request)
     {
         $products = Product::paginate();
-        // dd($products);
-        // $request->user()->currentAccessToken()->delete();
 
         return response(
             [
