@@ -105,7 +105,7 @@
     {
       let data =
       {
-        items: null,
+        items: [],
         currentItem: {},
         isLoading: false,
         isSaving: false,
