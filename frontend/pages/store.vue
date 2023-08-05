@@ -31,8 +31,8 @@
                   <input type="number" class="form-control" id="inputPrice">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputDiscount" class="form-label">Discount</label>
-                  <input type="number" class="form-control" id="inputDiscount">
+                  <label for="inputQuantity" class="form-label">Quantity</label>
+                  <input type="number" class="form-control" id="inputQuantity">
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
