@@ -165,8 +165,6 @@
           }
         )
         .catch((error) => { console.error("Error:", error); });
-
-        this.$refs.closeButton.click();
       },
     }
   }
