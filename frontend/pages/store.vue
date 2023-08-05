@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-md-12">
                   <label for="inputDescription" class="form-label">Description</label>
-                  <input type="text" class="form-control" id="inputDescription">
+                  <input type="text" class="form-control" id="inputDescription" :value="currentItem?.description">
                 </div>
                 <div class="col-md-6">
                   <label for="inputPrice" class="form-label">Price</label>
