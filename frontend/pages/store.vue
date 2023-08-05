@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
-                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" v-model="currentItem.thumbnail" required>
+                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" :value="currentItem.thumbnail" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
