@@ -150,6 +150,7 @@
         };
         
         this.isSaving = true;
+        this.currentItem = {};
         
         fetch(url, payload)
         .then((response) => response.json())
