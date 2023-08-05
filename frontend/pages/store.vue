@@ -71,7 +71,7 @@
       <tbody>
         <tr v-for="item in items">
           <th scope="row">1</th>
-          <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiKIGiH9HTFluylskypHMDTStOHsXMTzHDA&usqp=CAU" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
+          <td><img :src="item.thumbnailUrl" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
           <td>Shirt</td>
           <td>Black Shirt</td>
           <td>PKR 1000</td>
