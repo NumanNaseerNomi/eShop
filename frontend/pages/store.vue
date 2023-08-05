@@ -60,7 +60,7 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <table class="table table-striped align-middle">
+    <table class="table table-striped align-middle" v-else>
       <thead>
         <tr>
           <th scope="col">#</th>
