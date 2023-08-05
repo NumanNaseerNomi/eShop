@@ -146,7 +146,7 @@
             "Content-Type": "application/json",
             'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
           },
-          body: JSON.stringify({ email: this.email, password: this.password })
+          body: JSON.stringify(this.currentItem)
         };
         
         this.isSaving = true;
