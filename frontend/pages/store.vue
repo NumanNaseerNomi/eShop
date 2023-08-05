@@ -149,8 +149,7 @@
           body: JSON.stringify({ email: this.email, password: this.password })
         };
         
-        this.isLoading = true;
-        this.clearData();
+        this.isSaving = true;
         
         fetch(url, payload)
         .then((response) => response.json())
