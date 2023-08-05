@@ -119,7 +119,7 @@
       {
         this.isLoading = true;
 
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=2')
+        fetch('http://localhost:8000/api/getProducts')
         .then(response => response.json())
         .then(json =>
           {
