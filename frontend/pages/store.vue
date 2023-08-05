@@ -9,7 +9,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ref="closeButton"></button>
           </div>
           <form @submit.prevent="saveItem()">
             <div class="modal-body">
@@ -48,7 +48,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+              <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </form>
         </div>
@@ -132,6 +132,7 @@
       saveItem()
       {
         alert(this.currentItem);
+        this.$refs.closeButton.click();
       }
     }
   }
