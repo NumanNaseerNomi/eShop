@@ -21,6 +21,6 @@ class Product extends Model
         'price',
         'quantity',
         'thumbnail',
-        'status',
+        'isActive',
     ];
 }
