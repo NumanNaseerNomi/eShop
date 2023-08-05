@@ -156,7 +156,7 @@
         .then((data) =>
           {
             data.message ? this.message = data.message : null;
-            this.isLoading = false;
+            this.isSaving = false;
             
             if(data.status == 'success')
             {
