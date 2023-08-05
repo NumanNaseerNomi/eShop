@@ -137,6 +137,40 @@
 
       saveItem()
       {
+        let url = useRuntimeConfig().public.API_URL + '/login';
+        let payload =
+        {
+          method: "POST",
+          headers:
+          {
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+          },
+          body: JSON.stringify({ email: this.email, password: this.password })
+        };
+        
+        this.isLoading = true;
+        this.clearData();
+        
+        fetch(url, payload)
+        .then((response) => response.json())
+        .then((data) =>
+          {
+            data.message ? this.message = data.message : null;
+            this.isLoading = false;
+            
+            if(data.status == 'success')
+            {
+              localStorage.setItem('accessToken', data.accessToken);
+              localStorage.setItem('authUser', JSON.stringify(data.user));
+              useIsAuthState().value = true;
+              useAuthUserState().value = data.user;
+              this.$router.push('/');
+            }
+          }
+        )
+        .catch((error) => { console.error("Error:", error); });
+
         this.$refs.closeButton.click();
       },
     }
