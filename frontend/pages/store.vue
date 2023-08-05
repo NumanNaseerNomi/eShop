@@ -55,6 +55,12 @@
         </div>
       </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
     <table class="table table-striped align-middle">
       <thead>
         <tr>
