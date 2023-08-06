@@ -77,7 +77,7 @@
         <tr v-for="(item, index) in items">
           <th scope="row">{{ ++index }}</th>
           <td>{{ item.id }}</td>
-          <td><img :src="item.thumbnail" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
+          <td><img :src="getThumbnailUrl(item.thumbnail)" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
           <td>{{ item.name }}</td>
           <td>{{ item.description }}</td>
           <td>{{ item.price }}</td>
@@ -174,6 +174,11 @@
       deleteItem(id)
       {
         alert(id);
+      },
+
+      getThumbnailUrl(thumbnail)
+      {
+        return useRuntimeConfig().public.API_URL.replace(/\/api$/, '') + '/storage/' + thumbnail;
       },
     }
   }
