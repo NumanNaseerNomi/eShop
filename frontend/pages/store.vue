@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-6">
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
-                  <input class="form-control" type="file" id="formThumbnail" accept="image/*" @change="($event) => { this.currentItem.thumbnail = $event.target.files[0]; }" required>
+                  <input class="form-control" type="file" id="formThumbnail" ref="thumbnailInput" accept="image/*" @change="($event) => { this.currentItem.thumbnail = $event.target.files[0]; }" required>
                 </div>
                 <div class="col-md-6">
                   <label for="inputStatus" class="form-label">Status</label>
@@ -161,6 +161,7 @@
           {
             this.isSaving = false;
             this.$refs.closeButton.click();
+            this.$refs.thumbnailInput.value = '';
             this.currentItem = {};
           }
         )
