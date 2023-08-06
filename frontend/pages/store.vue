@@ -159,10 +159,10 @@
         .then((response) => response.json())
         .then((data) =>
           {
-            this.isSaving = false;
             this.$refs.closeButton.click();
-            this.$refs.thumbnailInput.value = '';
             this.currentItem = {};
+            this.$refs.thumbnailInput.value = '';
+            this.isSaving = false;
           }
         )
         .catch((error) => { console.error("Error:", error); });
