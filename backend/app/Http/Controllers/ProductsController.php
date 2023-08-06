@@ -58,8 +58,17 @@ class ProductsController extends Controller
 
             $productId = $validatedData['id'] ?? null;
             $product = Product::updateOrCreate(['id' => $productId], $validatedData);
-            
+
             return response()->json(['message' => 'Product saved successfully', 'data' => $product]);
         }
+    }
+
+    public function deleteProduct($id)
+    {
+        $product = Product::destroy($id);
+
+        return $product 
+            ? response()->json(['message' => 'Product deleted successfully'])
+            : response()->json(['message' => 'Product not found'], 404);
     }
 }
