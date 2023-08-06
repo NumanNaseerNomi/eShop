@@ -31,5 +31,3 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
 });
-
-// Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
