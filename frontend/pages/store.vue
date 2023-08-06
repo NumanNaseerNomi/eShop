@@ -86,7 +86,7 @@
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-              <button type="button" class="btn btn-danger">Delete</button>
+              <button type="button" class="btn btn-danger" @click="deleteItem(item.id)">Delete</button>
             </div>
           </td>
         </tr>
@@ -169,6 +169,11 @@
           }
         )
         .catch((error) => { console.error("Error:", error); });
+      },
+
+      deleteItem(id)
+      {
+        alert(id);
       },
     }
   }
