@@ -76,13 +76,13 @@
       <tbody>
         <tr v-for="item in items">
           <th scope="row">1</th>
-          <td>{{item.id}}</td>
+          <td>{{ item.id }}</td>
           <td><img :src="item.thumbnailUrl" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
-          <td>Shirt</td>
-          <td>Black Shirt</td>
-          <td>PKR 1000</td>
-          <td>12</td>
-          <td>Active</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.isActive }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
