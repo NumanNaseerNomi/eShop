@@ -163,6 +163,7 @@
         .then((data) =>
           {
             this.$refs.closeButton.click();
+            this.items.push(data.data);
             this.currentItem = {};
             this.$refs.thumbnailInput.value = '';
             this.isSaving = false;
