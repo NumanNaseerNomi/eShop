@@ -174,7 +174,24 @@
 
       deleteItem(id)
       {
+        let url = useRuntimeConfig().public.API_URL + '/deleteProduct';
+        let payload =
+        {
+          method: "DELETE",
+          headers:
+          {
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+          },
+          body: JSON.stringify({ id: id })
+        };
+
         this.items = this.items.filter(item => item.id !== id);
+
+        fetch(url, payload)
+        .then((response) => response.json())
+        .then((data) => {})
+        .catch((error) => { console.error("Error:", error); });
       },
 
       getThumbnailUrl(thumbnail)
