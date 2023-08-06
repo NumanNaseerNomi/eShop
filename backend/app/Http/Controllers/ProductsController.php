@@ -63,12 +63,27 @@ class ProductsController extends Controller
         }
     }
 
-    public function deleteProduct($id)
+    public function deleteProduct(Request $request)
     {
-        $product = Product::destroy($id);
+        $validator = Validator::make($request->all(), ['id' => 'required|exists:products,id']);
 
-        return $product 
-            ? response()->json(['message' => 'Product deleted successfully'])
-            : response()->json(['message' => 'Product not found'], 404);
+        if($validator->fails())
+        {
+            return response(
+                [
+                    'status' => 'error',
+                    'errors' => $validator->errors(),
+                ],
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+        else
+        {
+            $product = Product::destroy($request->input('id'));
+
+            return $product 
+                ? response()->json(['message' => 'Product deleted successfully'])
+                : response()->json(['message' => 'Product not found'], 404);
+        }
     }
 }
