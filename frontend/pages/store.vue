@@ -63,6 +63,7 @@
       <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">ID</th>
           <th scope="col">Thumbnail</th>
           <th scope="col">Name</th>
           <th scope="col">Description</th>
@@ -75,6 +76,7 @@
       <tbody>
         <tr v-for="item in items">
           <th scope="row">1</th>
+          <td>{{item.id}}</td>
           <td><img :src="item.thumbnailUrl" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
           <td>Shirt</td>
           <td>Black Shirt</td>
@@ -123,9 +125,10 @@
     {
       getStoreItems()
       {
+        let url = useRuntimeConfig().public.API_URL + '/getProducts';
         this.isLoading = true;
 
-        fetch('http://localhost:8000/api/getProducts')
+        fetch(url)
         .then(response => response.json())
         .then(json =>
           {
