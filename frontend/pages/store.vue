@@ -174,7 +174,7 @@
 
       deleteItem(id)
       {
-        alert(id);
+        this.items = this.items.filter(item => item.id !== id);
       },
 
       getThumbnailUrl(thumbnail)
