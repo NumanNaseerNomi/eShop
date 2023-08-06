@@ -74,8 +74,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items">
-          <th scope="row">1</th>
+        <tr v-for="(item, index) in items">
+          <th scope="row">{{ ++index }}</th>
           <td>{{ item.id }}</td>
           <td><img :src="item.thumbnailUrl" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
           <td>{{ item.name }}</td>
