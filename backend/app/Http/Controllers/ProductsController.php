@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class ProductsController extends Controller
@@ -23,22 +24,42 @@ class ProductsController extends Controller
 
     public function saveProduct(Request $request)
     {
-        $validatedData = $request->validate(
-            [
-                'id' => 'nullable|exists:products,id',
-                'name' => 'required|string',
-                'description' => 'required|string',
-                'price' => 'required|numeric',
-                'quantity' => 'required|numeric',
-                'thumbnail' => 'required|image',
-                'isActive' => 'required|boolean',
-            ]
-        );
+        $validationRules =
+        [
+            'id' => 'nullable|exists:products,id',
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'price' => 'required|numeric',
+            'quantity' => 'required|numeric',
+            'thumbnail' => 'required|image',
+            'isActive' => 'required|boolean',
+        ];
 
-        $productId = $validatedData['id'] ?? null;
-        
-        $product = Product::updateOrCreate(['id' => $productId], $validatedData);
-        
-        return response()->json(['message' => 'Product saved successfully', 'data' => $product]);
+        $validator = Validator::make($request->all(), $validationRules);
+
+        if($validator->fails())
+        {
+            return response(
+                [
+                    'status' => 'error',
+                    'errors' => $validator->errors(),
+                ],
+                Response::HTTP_BAD_REQUEST
+            );
+        }
+        else
+        {
+            $validatedData = $validator->validated();
+            
+            if($request->hasFile('thumbnail'))
+            {
+                $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails', 'public');
+            }
+
+            $productId = $validatedData['id'] ?? null;
+            $product = Product::updateOrCreate(['id' => $productId], $validatedData);
+            
+            return response()->json(['message' => 'Product saved successfully', 'data' => $product]);
+        }
     }
 }
