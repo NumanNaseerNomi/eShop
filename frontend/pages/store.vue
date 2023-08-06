@@ -149,27 +149,19 @@
         let payload =
         {
           method: "POST",
-          headers:
-          {
-            "Content-Type": "application/json",
-            'Authorization': 'Bearer ' + localStorage.getItem('accessToken'),
-          },
+          headers: { 'Authorization': 'Bearer ' + localStorage.getItem('accessToken'), },
           body: formData
         };
         
         this.isSaving = true;
-        this.currentItem = {};
         
         fetch(url, payload)
         .then((response) => response.json())
         .then((data) =>
           {
             this.isSaving = false;
-            
-            if(data.status == 'success')
-            {
-              this.$refs.closeButton.click();
-            }
+            this.$refs.closeButton.click();
+            this.currentItem = {};
           }
         )
         .catch((error) => { console.error("Error:", error); });
