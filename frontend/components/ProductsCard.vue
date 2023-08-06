@@ -5,7 +5,7 @@
         <div class="col" v-for="product in products">
           <div class="card h-100 text-decoration-none text-body" to="/product/detail">
             <NuxtLink to="/product/detail">
-              <img :src="product.thumbnail" class="card-img-top" alt="...">
+              <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="...">
             </NuxtLink>
             <div class="card-body h6 m-0">
               <p class="card-text text-truncate">{{ product.name }}</p>
@@ -89,7 +89,12 @@
       addToCart()
       {
         alert('addToCart()');
-      }
+      },
+
+      getThumbnailUrl(thumbnail)
+      {
+        return useRuntimeConfig().public.API_URL.replace(/\/api$/, '') + '/storage/' + thumbnail;
+      },
     }
   }
 </script>
