@@ -16,15 +16,15 @@
                 <tbody>
                   <tr>
                     <th scope="row">Name</th>
-                    <td>Mark</td>
+                    <td>{{ product.name }}</td>
                   </tr>
                   <tr>
                     <th scope="row">Description</th>
-                    <td>Jacob</td>
+                    <td>{{ product.description }}</td>
                   </tr>
                   <tr>
                     <th scope="row">Price</th>
-                    <td>@twitter</td>
+                    <td>PKR {{ product.price }}</td>
                   </tr>
                 </tbody>
               </table>
