@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -32,5 +33,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
     Route::delete('/deleteProduct', [ProductsController::class, 'deleteProduct']);
 
-    Route::post('/cart/add', [ProductsController::class, 'addToCart']);
+    Route::post('/cart/add', [CartController::class, 'addToCart']);
 });
