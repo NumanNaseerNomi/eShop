@@ -4,7 +4,7 @@
       <template v-if="products.length">
         <div class="col" v-for="product in products">
           <div class="card h-100 text-decoration-none text-body">
-            <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="..." role="button">
+            <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="..." role="button" data-bs-toggle="modal" data-bs-target="#productDetailModal">
             <div class="card-body h6 m-0">
               <p class="card-text text-truncate">{{ product.name }}</p>
               <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
