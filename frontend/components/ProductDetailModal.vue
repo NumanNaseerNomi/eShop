@@ -14,12 +14,6 @@
               <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
 
               <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                  </tr>
-                </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
