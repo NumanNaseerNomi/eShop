@@ -38,7 +38,7 @@
         <button class="btn btn-outline-success m-4" type="button" @click="getProducts()">Load More</button>
     </div>
   </div>
-  <ProductDetailModal modalId="ProductDetailModal"/>
+  <ProductDetailModal modalId="productDetailModal"/>
 </template>
 <script>
   export default
