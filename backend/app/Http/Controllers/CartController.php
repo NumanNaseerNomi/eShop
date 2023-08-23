@@ -4,11 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
     public function addToCart(Request $request)
     {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'product_id' => 'required|numeric|exists:products,id',
+                'quantity' => 'integer|min:1',
+            ]
+        );
+        
+        if($validator->fails())
+        {
+            return response()->json(['errors' => $validator->errors()], 400);
+        }
+        
         $productId = $request->input('product_id');
         $quantity = $request->input('quantity', 1);
         
