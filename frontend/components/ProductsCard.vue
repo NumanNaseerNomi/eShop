@@ -4,7 +4,7 @@
       <template v-if="products.length">
         <div class="col" v-for="product in products">
           <div class="card h-100 text-decoration-none text-body">
-            <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="..." role="button" data-bs-toggle="modal" data-bs-target="#productDetailModal">
+            <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="..." role="button" data-bs-toggle="modal" data-bs-target="#productDetailModal" @click="() => { productDetail = product; }">
             <div class="card-body h6 m-0">
               <p class="card-text text-truncate">{{ product.name }}</p>
               <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
@@ -48,6 +48,7 @@
       let data =
       {
         products: [],
+        productDetail: {},
         isLoading: false,
         canLoadMore: true,
         page: 1,
