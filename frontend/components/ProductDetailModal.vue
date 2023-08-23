@@ -30,24 +30,6 @@
         required: true,
       },
     },
-
-    data()
-    {
-      let data =
-      {
-        products: [],
-        isLoading: false,
-        canLoadMore: true,
-        page: 1,
-      }
-
-      return data;
-    },
-
-    created()
-    {
-      this.getProducts();
-    },
     
     methods:
     {
