@@ -12,19 +12,18 @@
             <div class="card-body h6 m-0">
               <p class="card-text text-truncate">{{ product.name }}</p>
               <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
-
               <table class="table">
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">Name</th>
                     <td>Mark</td>
                   </tr>
                   <tr>
-                    <th scope="row">2</th>
+                    <th scope="row">Description</th>
                     <td>Jacob</td>
                   </tr>
                   <tr>
-                    <th scope="row">3</th>
+                    <th scope="row">Price</th>
                     <td>@twitter</td>
                   </tr>
                 </tbody>
