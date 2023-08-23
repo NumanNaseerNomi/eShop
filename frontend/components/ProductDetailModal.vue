@@ -51,32 +51,6 @@
     
     methods:
     {
-      getProducts()
-      {
-        let url = useRuntimeConfig().public.API_URL + '/getProducts?page=' + this.page;
-        this.isLoading = true;
-
-        fetch(url)
-        .then(response => response.json())
-        .then(data =>
-          {
-            this.products.push(...data.data.data);
-            this.isLoading = false;
-            this.page++;
-
-            if(this.page > data.data.last_page)
-            {
-              this.canLoadMore = false;
-            }
-          }
-        );
-      },
-
-      addToCart()
-      {
-        alert('addToCart()');
-      },
-
       getThumbnailUrl(thumbnail)
       {
         return useRuntimeConfig().public.API_URL.replace(/\/api$/, '') + '/storage/' + thumbnail;
