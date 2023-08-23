@@ -3,7 +3,7 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="infinite-list">
       <template v-if="products.length">
         <div class="col" v-for="product in products">
-          <div class="card h-100 text-decoration-none text-body" to="/product/detail">
+          <div class="card h-100 text-decoration-none text-body">
             <NuxtLink to="/product/detail">
               <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="...">
             </NuxtLink>
