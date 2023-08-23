@@ -24,6 +24,10 @@
                     <th scope="row">Price</th>
                     <td>PKR {{ product.price }}</td>
                   </tr>
+                  <tr>
+                    <th scope="row">Stock</th>
+                    <td>{{ product.quantity }}</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
