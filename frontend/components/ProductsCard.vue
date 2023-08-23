@@ -66,9 +66,10 @@
     {
       getProducts()
       {
+        let url = useRuntimeConfig().public.API_URL + '/getProducts?page=' + this.page;
         this.isLoading = true;
 
-        fetch('http://localhost:8000/api/getProducts')
+        fetch(url)
         .then(response => response.json())
         .then(data =>
           {
