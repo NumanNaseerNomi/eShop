@@ -1,8 +1,4 @@
 <template>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + modalId">Launch demo modals</button>
-  
-    <!-- Modal -->
     <div class="modal fade" :id="modalId" tabindex="-1" :aria-labelledby="modalId + 'Label'" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
