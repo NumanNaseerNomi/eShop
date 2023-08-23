@@ -11,8 +11,7 @@ class CartController extends Controller
         $productId = $request->input('product_id');
         $quantity = $request->input('quantity', 1);
         
-        $user = auth()->user();
-        $user->cart()->attach($productId, ['quantity' => $quantity]);
+        auth()->user()->cart()->attach($productId, ['quantity' => $quantity]);
 
         return response()->json(['message' => 'Item added to cart successfully']);
     }
