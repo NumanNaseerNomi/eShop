@@ -7,7 +7,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          {{ product.name }}
+          <div class="card h-100 text-decoration-none text-body">
+            <img :src="getThumbnailUrl(product.thumbnail)" class="card-img-top" alt="..." role="button" data-bs-toggle="modal" data-bs-target="#productDetailModal" @click="() => { productDetail = product; }">
+            <div class="card-body h6 m-0">
+              <p class="card-text text-truncate">{{ product.name }}</p>
+              <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
+              <div class="d-grid gap-2 m-2">
+                <button class="btn btn-success" type="button" @click="addToCart()">Add to Cart</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
