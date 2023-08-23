@@ -77,7 +77,7 @@
             this.isLoading = false;
             this.page++;
 
-            if(data.length == 0)
+            if(this.page > data.data.last_page)
             {
               this.canLoadMore = false;
             }
