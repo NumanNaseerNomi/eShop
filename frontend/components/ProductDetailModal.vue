@@ -23,6 +23,12 @@
         type: String,
         default: 'exampleModal',
       },
+
+      product:
+      {
+        type: Object,
+        required: true,
+      },
     },
 
     data()
