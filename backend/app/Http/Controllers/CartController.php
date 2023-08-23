@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -11,7 +12,9 @@ class CartController extends Controller
         $productId = $request->input('product_id');
         $quantity = $request->input('quantity', 1);
         
-        auth()->user()->cart()->attach($productId, ['quantity' => $quantity]);
+        $cartItem = new Cart(['product_id' => $request->product_id, 'quantity' => $quantity]);
+        
+        auth()->user()->cart()->save($cartItem);
 
         return response()->json(['message' => 'Item added to cart successfully']);
     }
