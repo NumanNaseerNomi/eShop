@@ -55,14 +55,9 @@ class CartController extends Controller
         {
             return response()->json(['errors' => $validator->errors()], 400);
         }
-        
-        $productId = $request->input('product_id');
-        $quantity = $request->input('quantity', 1);
-        
-        $cartItem = new Cart(['product_id' => $request->product_id, 'quantity' => $quantity]);
-        
-        auth()->user()->cart()->save($cartItem);
 
-        return response()->json(['message' => 'Item added to cart successfully']);
+        auth()->user()->cart()->find($request->input('id'))->delete();
+
+        return response()->json(['message' => 'Item removed from cart successfully']);
     }
 }
