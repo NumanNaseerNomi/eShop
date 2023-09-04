@@ -35,13 +35,6 @@
                   <label for="formThumbnail" class="form-label">Thumbnail</label>
                   <input class="form-control" type="file" id="formThumbnail" ref="thumbnailInput" accept="image/*" @change="($event) => { this.currentItem.thumbnail = $event.target.files[0]; }" required>
                 </div>
-                <div class="col-md-6">
-                  <label for="inputStatus" class="form-label">Status</label>
-                  <select id="inputStatus" class="form-select" v-model="currentItem.isActive" required>
-                    <option value="1">Active</option>
-                    <option value="0">Inactive</option>
-                  </select>
-                </div>
               </div>
             </div>
             <div class="modal-footer">
