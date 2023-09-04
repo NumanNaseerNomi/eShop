@@ -11,7 +11,7 @@ class CartController extends Controller
 {
     public function getCartItems(Request $request)
     {
-        $items = Cart::paginate();
+        $items = auth()->user()->cart()->paginate();
 
         return response(
             [
