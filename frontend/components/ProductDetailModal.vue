@@ -31,6 +31,7 @@
                 </tbody>
               </table>
               <div class="d-grid gap-2 m-2">
+                <div class="alert alert-success" role="alert">{{ message }}</div>
                 <button class="btn btn-success" type="button" @click="addToCart(product.id)">Add to Cart</button>
               </div>
             </div>
