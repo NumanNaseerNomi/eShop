@@ -23,7 +23,6 @@
           <td>{{ item.description }}</td>
           <td>{{ item.price }}</td>
           <td>{{ item.quantity }}</td>
-          <td>{{ item.isActive ? 'Active' : 'Inactive' }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-primary" @click="editItem(item.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
