@@ -32,7 +32,7 @@
               </table>
               <div class="d-grid gap-2 m-2">
                 <div class="alert alert-success" role="alert" v-show="message.length">{{ message }}</div>
-                <button class="btn btn-success" type="button" v-show="!message.length" @click="addToCart(product.id)">
+                <button class="btn btn-success" type="button" v-show="!message.length" @click="addToCart(product.id)" :disabled="isLoading">
                   <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
                   Add to Cart
                 </button>
