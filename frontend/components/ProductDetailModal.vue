@@ -30,6 +30,9 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="d-grid gap-2 m-2">
+                <button class="btn btn-success" type="button" @click="addToCart(product.id)">Add to Cart</button>
+              </div>
             </div>
           </div>
         </div>
