@@ -30,6 +30,13 @@
           </td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row" colspan="5">TOTAL:</th>
+          <td>{{ items.reduce((sum, item) => sum + item.product.price, 0) }}</td>
+          <td>@twitter</td>
+        </tr>
+      </tfoot>
     </table>
     <div class="d-flex justify-content-center" v-if="isLoading">
       <div class="spinner-border" role="status">
