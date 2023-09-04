@@ -82,40 +82,6 @@
         );
       },
 
-      saveItem()
-      {
-        let url = useRuntimeConfig().public.API_URL + '/saveProduct';
-
-        let formData = new FormData();
-  
-        for(let field in this.currentItem)
-        {
-          formData.append(field, this.currentItem[field]);
-        }
-
-        let payload =
-        {
-          method: "POST",
-          headers: { 'Authorization': 'Bearer ' + localStorage.getItem('accessToken'), },
-          body: formData
-        };
-        
-        this.isSaving = true;
-        
-        fetch(url, payload)
-        .then((response) => response.json())
-        .then((data) =>
-          {
-            this.$refs.closeButton.click();
-            this.currentItem.id ?? this.items.push(data.data);
-            this.currentItem = {};
-            this.$refs.thumbnailInput.value = '';
-            this.isSaving = false;
-          }
-        )
-        .catch((error) => { console.error("Error:", error); });
-      },
-
       removeItem(id)
       {
         let url = useRuntimeConfig().public.API_URL + '/cart/remove';
