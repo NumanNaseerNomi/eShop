@@ -118,7 +118,7 @@
 
       removeItem(id)
       {
-        let url = useRuntimeConfig().public.API_URL + '/deleteProduct';
+        let url = useRuntimeConfig().public.API_URL + '/cart/remove';
         let payload =
         {
           method: "DELETE",
