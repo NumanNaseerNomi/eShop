@@ -84,6 +84,7 @@
 
       addToCart(product_id)
       {
+        this.isLoading = true;
         let url = useRuntimeConfig().public.API_URL + '/cart/add';
         let payload =
         {
@@ -97,6 +98,7 @@
         .then((data) =>
           {
             this.message = data.message;
+            this.isLoading = false;
           }
         )
         .catch((error) => { console.error("Error:", error); });
