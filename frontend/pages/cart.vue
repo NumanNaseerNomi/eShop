@@ -111,11 +111,6 @@
         .catch((error) => { console.error("Error:", error); });
       },
 
-      editItem(id)
-      {
-        this.currentItem = this.items.find((item) => item.id === id);
-      },
-
       deleteItem(id)
       {
         let url = useRuntimeConfig().public.API_URL + '/deleteProduct';
