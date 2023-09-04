@@ -4,7 +4,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" :id="modalId + 'Label'">Product Details</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="clearData()"></button>
         </div>
         <div class="modal-body">
           <div class="card h-100 text-decoration-none text-body">
@@ -74,6 +74,11 @@
       getThumbnailUrl(thumbnail)
       {
         return useRuntimeConfig().public.API_URL.replace(/\/api$/, '') + '/storage/' + thumbnail;
+      },
+
+      clearData()
+      {
+        this.message = '';
       },
 
       addToCart(product_id)
