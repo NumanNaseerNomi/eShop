@@ -47,7 +47,6 @@
       let data =
       {
         items: [],
-        currentItem: {},
         isLoading: false,
         isSaving: false,
       }
