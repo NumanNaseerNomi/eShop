@@ -25,7 +25,7 @@
           <td>{{ item.quantity }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-danger" @click="deleteItem(item.id)">Delete</button>
+              <button type="button" class="btn btn-danger" @click="deleteItem(item.id)">Remove</button>
             </div>
           </td>
         </tr>
