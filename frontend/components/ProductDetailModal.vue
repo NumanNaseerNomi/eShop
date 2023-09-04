@@ -64,6 +64,7 @@
       let data =
       {
         message: '',
+        isLoading: false,
       }
 
       return data;
