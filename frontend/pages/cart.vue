@@ -18,10 +18,10 @@
         <tr v-for="(item, index) in items">
           <th scope="row">{{ ++index }}</th>
           <td>{{ item.id }}</td>
-          <td><img :src="getThumbnailUrl(item.thumbnail)" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.price }}</td>
+          <td><img :src="getThumbnailUrl(item.product.thumbnail)" class="img-thumbnail" alt="Thumbnail" style="max-width: 4rem;"></td>
+          <td>{{ item.product.name }}</td>
+          <td>{{ item.product.description }}</td>
+          <td>{{ item.product.price }}</td>
           <td>{{ item.quantity }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
