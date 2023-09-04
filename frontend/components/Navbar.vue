@@ -22,7 +22,7 @@
                     <li class="nav-item" v-if="authUser?.is_admin">
                         <NuxtLink class="nav-link text-light" to="/store">My Store</NuxtLink>
                     </li>
-                    <li class="nav-item" v-else>
+                    <li class="nav-item" v-if="isAuth">
                         <NuxtLink class="nav-link text-light" to="/cart">My Cart</NuxtLink>
                     </li>
                     <li class="nav-item dropdown" v-if="isAuth">
