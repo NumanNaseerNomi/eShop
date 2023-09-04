@@ -57,6 +57,16 @@
         required: true,
       },
     },
+
+    data()
+    {
+      let data =
+      {
+        message: '',
+      }
+
+      return data;
+    },
     
     methods:
     {
@@ -79,6 +89,7 @@
         .then((response) => response.json())
         .then((data) =>
           {
+            this.message = data.message;
           }
         )
         .catch((error) => { console.error("Error:", error); });
