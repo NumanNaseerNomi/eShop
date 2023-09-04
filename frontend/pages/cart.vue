@@ -1,9 +1,6 @@
 <template>
   <div class="container my-4">
     <h1>My Cart</h1>
-    <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="() => { this.currentItem = {}; }">Add Item</button>
-    </div> -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
