@@ -25,7 +25,6 @@
           <td>{{ item.quantity }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-primary" @click="editItem(item.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
               <button type="button" class="btn btn-danger" @click="deleteItem(item.id)">Delete</button>
             </div>
           </td>
