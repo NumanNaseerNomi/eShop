@@ -8,9 +8,9 @@
             <div class="card-body h6 m-0">
               <p class="card-text text-truncate">{{ product.name }}</p>
               <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
-              <div class="d-grid gap-2 m-2">
+              <!-- <div class="d-grid gap-2 m-2">
                 <button class="btn btn-success" type="button" @click="addToCart(product.id)">Add to Cart</button>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
