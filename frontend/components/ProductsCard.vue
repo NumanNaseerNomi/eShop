@@ -82,25 +82,6 @@
         );
       },
 
-      addToCart(product_id)
-      {
-        let url = useRuntimeConfig().public.API_URL + '/cart/add';
-        let payload =
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('accessToken'), },
-          body: JSON.stringify({ product_id: product_id, quantity: 1 })
-        };
-
-        fetch(url, payload)
-        .then((response) => response.json())
-        .then((data) =>
-          {
-          }
-        )
-        .catch((error) => { console.error("Error:", error); });
-      },
-
       getThumbnailUrl(thumbnail)
       {
         return useRuntimeConfig().public.API_URL.replace(/\/api$/, '') + '/storage/' + thumbnail;
