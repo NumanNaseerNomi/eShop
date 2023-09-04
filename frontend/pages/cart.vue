@@ -57,12 +57,12 @@
 
     created()
     {
-      this.getStoreItems();
+      this.getCartItems();
     },
     
     methods:
     {
-      getStoreItems()
+      getCartItems()
       {
         let url = useRuntimeConfig().public.API_URL + '/getProducts';
         this.isLoading = true;
