@@ -1,54 +1,6 @@
 <template>
   <div class="container my-4">
     <h1>My Cart</h1>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ref="closeButton"></button>
-          </div>
-          <form @submit.prevent="saveItem()">
-            <div class="modal-body">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="inputID" class="form-label">ID</label>
-                  <input type="number" class="form-control" id="inputID" v-model="currentItem.id" disabled>
-                </div>
-                <div class="col-md-6">
-                  <label for="inputName" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="inputName" v-model="currentItem.name" required>
-                </div>
-                <div class="col-md-12">
-                  <label for="inputDescription" class="form-label">Description</label>
-                  <input type="text" class="form-control" id="inputDescription" v-model="currentItem.description" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="inputPrice" class="form-label">Price</label>
-                  <input type="number" class="form-control" id="inputPrice" v-model="currentItem.price" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="inputQuantity" class="form-label">Quantity</label>
-                  <input type="number" class="form-control" id="inputQuantity" v-model="currentItem.quantity" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="formThumbnail" class="form-label">Thumbnail</label>
-                  <input class="form-control" type="file" id="formThumbnail" ref="thumbnailInput" accept="image/*" @change="($event) => { this.currentItem.thumbnail = $event.target.files[0]; }" required>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary" :class="{'disabled': isSaving}">
-                <div class="spinner-border spinner-border-sm" role="status" v-if="isSaving">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-                <span v-else>Save</span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
     <table class="table table-striped align-middle" v-if="items.length">
       <thead>
         <tr>
