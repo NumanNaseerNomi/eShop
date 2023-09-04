@@ -25,7 +25,7 @@
           <td>{{ item.quantity }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-danger" @click="deleteItem(item.id)">Remove</button>
+              <button type="button" class="btn btn-danger" @click="removeItem(item.id)">Remove</button>
             </div>
           </td>
         </tr>
@@ -116,7 +116,7 @@
         .catch((error) => { console.error("Error:", error); });
       },
 
-      deleteItem(id)
+      removeItem(id)
       {
         let url = useRuntimeConfig().public.API_URL + '/deleteProduct';
         let payload =
