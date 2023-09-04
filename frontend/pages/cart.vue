@@ -34,7 +34,7 @@
         <tr>
           <th scope="row" colspan="5">TOTAL:</th>
           <td>{{ items.reduce((sum, item) => sum + item.product.price, 0) }}</td>
-          <td>@twitter</td>
+          <td>{{ items.reduce((quantity, item) => quantity + item.quantity, 0) }}</td>
         </tr>
       </tfoot>
     </table>
