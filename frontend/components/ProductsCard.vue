@@ -8,9 +8,6 @@
             <div class="card-body h6 m-0">
               <p class="card-text text-truncate">{{ product.name }}</p>
               <span class="text-success mx-2 text-nowrap">PKR {{ product.price }}</span>
-              <div class="d-grid gap-2 m-2">
-                <button class="btn btn-success" type="button" @click="addToCart(product.id)">Add to Cart</button>
-              </div>
             </div>
           </div>
         </div>
@@ -83,25 +80,6 @@
             }
           }
         );
-      },
-
-      addToCart(product_id)
-      {
-        let url = useRuntimeConfig().public.API_URL + '/cart/add';
-        let payload =
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('accessToken'), },
-          body: JSON.stringify({ product_id: product_id, quantity: 1 })
-        };
-
-        fetch(url, payload)
-        .then((response) => response.json())
-        .then((data) =>
-          {
-          }
-        )
-        .catch((error) => { console.error("Error:", error); });
       },
 
       getThumbnailUrl(thumbnail)

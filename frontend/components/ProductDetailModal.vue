@@ -4,7 +4,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" :id="modalId + 'Label'">Product Details</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="clearData()"></button>
         </div>
         <div class="modal-body">
           <div class="card h-100 text-decoration-none text-body">
@@ -30,6 +30,13 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="d-grid gap-2 m-2">
+                <div class="alert alert-success" role="alert" v-show="message.length">{{ message }}</div>
+                <button class="btn btn-success" type="button" v-show="!message.length" @click="addToCart(product.id)" :disabled="isLoading">
+                  <span class="spinner-border spinner-border-sm" aria-hidden="true" v-show="isLoading"></span>
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -54,12 +61,50 @@
         required: true,
       },
     },
+
+    data()
+    {
+      let data =
+      {
+        message: '',
+        isLoading: false,
+      }
+
+      return data;
+    },
     
     methods:
     {
       getThumbnailUrl(thumbnail)
       {
         return useRuntimeConfig().public.API_URL.replace(/\/api$/, '') + '/storage/' + thumbnail;
+      },
+
+      clearData()
+      {
+        this.message = '';
+      },
+
+      addToCart(product_id)
+      {
+        this.isLoading = true;
+        let url = useRuntimeConfig().public.API_URL + '/cart/add';
+        let payload =
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", 'Authorization': 'Bearer ' + localStorage.getItem('accessToken'), },
+          body: JSON.stringify({ product_id: product_id, quantity: 1 })
+        };
+
+        fetch(url, payload)
+        .then((response) => response.json())
+        .then((data) =>
+          {
+            this.message = data.message;
+            this.isLoading = false;
+          }
+        )
+        .catch((error) => { console.error("Error:", error); });
       },
     }
   }
