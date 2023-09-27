@@ -63,7 +63,7 @@
     {
       getProducts()
       {
-        let url = useRuntimeConfig().public.API_URL + '/getProducts?page=' + this.page;
+        let url = useRuntimeConfig().public.API_URL + '/getActiveProducts?page=' + this.page;
         this.isLoading = true;
 
         fetch(url)
