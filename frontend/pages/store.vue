@@ -126,9 +126,15 @@
       getStoreItems()
       {
         let url = useRuntimeConfig().public.API_URL + '/getProducts';
+        let payload =
+        {
+          method: "POST",
+          headers: { 'Authorization': 'Bearer ' + localStorage.getItem('accessToken'), },
+        };
+
         this.isLoading = true;
 
-        fetch(url)
+        fetch(url, payload)
         .then(response => response.json())
         .then(json =>
           {
