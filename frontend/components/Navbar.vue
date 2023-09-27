@@ -4,7 +4,6 @@
             <div>
                 <nav class="nav text-light">
                     <NuxtLink class="navbar-brand text-light" to="/"><strong>eShop</strong></NuxtLink>
-                    <a class="nav-link text-light" href="#">Search</a>
                 </nav>
             </div>
             <!-- <div>
