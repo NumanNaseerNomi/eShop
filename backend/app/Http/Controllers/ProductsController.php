@@ -11,6 +11,19 @@ class ProductsController extends Controller
 {
     public function getProducts(Request $request)
     {
+        $products = Product::paginate();
+
+        return response(
+            [
+                'status' => 'success',
+                'data' => $products,
+            ],
+            Response::HTTP_OK
+        );
+    }
+
+    public function getActiveProducts(Request $request)
+    {
         $products = Product::where('isActive', true)->paginate();
 
         return response(
