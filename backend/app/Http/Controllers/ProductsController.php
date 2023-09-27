@@ -11,7 +11,7 @@ class ProductsController extends Controller
 {
     public function getProducts(Request $request)
     {
-        $products = Product::paginate();
+        $products = Product::where('isActive', true)->paginate();
 
         return response(
             [
