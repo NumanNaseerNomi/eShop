@@ -43,7 +43,7 @@
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-    <h2 class="text-center" v-if="!items.length && !isLoading">Store is Empty</h2>
+    <h2 class="text-center" v-if="!items.length && !isLoading">Cart is Empty</h2>
   </div>
 </template>
 <script>
