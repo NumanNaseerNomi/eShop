@@ -23,13 +23,14 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/email/verify/{id}', [AuthController::class, 'verify'])->name('verification.verify');
 Route::post('/email/resend', [AuthController::class, 'resend']);
 
-Route::get('/getProducts', [ProductsController::class, 'getProducts']);
+Route::get('/getActiveProducts', [ProductsController::class, 'getActiveProducts']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/updateProfile', [AuthController::class, 'updateProfile']);
     Route::post('/changePassword', [AuthController::class, 'changePassword']);
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    Route::post('/getProducts', [ProductsController::class, 'getProducts']);
     Route::post('/saveProduct', [ProductsController::class, 'saveProduct']);
     Route::delete('/deleteProduct', [ProductsController::class, 'deleteProduct']);
 
